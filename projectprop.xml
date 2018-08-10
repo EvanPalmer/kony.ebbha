@@ -1,0 +1,38 @@
+<properties>
+    <attributes name="appidkey" value="ebbha"/>
+    <attributes name="mwaddrkey" value="127.0.0.1"/>
+    <attributes name="iospopuptransitioncorrection" value="true"/>
+    <attributes name="isNewAppWithRespectToAndroidPackageName" value="true"/>
+    <attributes name="andwearminsdkkey" value="7.1 (25)"/>
+    <attributes name="iphonebundleversionkey" value="1.0"/>
+    <attributes name="iosrespectimagesizecorrection" value="true"/>
+    <attributes name="andwearappversioncode" value="1"/>
+    <attributes name="ioscheckboxcorrection" value="true"/>
+    <attributes name="apppackagekey" value="com.orgname.ebbha"/>
+    <attributes name="winmangotiletitlekey" value="ebbha"/>
+    <attributes name="andtargetsdkkey" value="4.0 (14)"/>
+    <attributes name="win8displaynamekey" value="ebbha"/>
+    <attributes name="android_allowselfsignedcertificates" value="None"/>
+    <attributes name="andweartargetsdkkey" value="7.1 (25)"/>
+    <attributes name="iphonebundleidentifierkey" value="com.kony.ebbha"/>
+    <attributes name="appnamekey" value="ebbha"/>
+    <attributes name="currentgaversion" value="8.2.6.v201805311344"/>
+    <attributes name="appversionkey" value="1.0.0"/>
+    <attributes name="project.type" value="js"/>
+    <attributes name="sessionmanager" value="Http Session Manager"/>
+    <attributes name="vendornamekey" value="KonyLabs"/>
+    <attributes name="appversioncode" value="1"/>
+    <attributes name="createdgaversion" value="8.2.10"/>
+    <attributes name="isDpScaleFactor" value="true"/>
+    <attributes name="iostextboxpaddingcorrection" value="true"/>
+    <attributes name="win6xj2meonlysupported" value="false"/>
+    <attributes name="wp10displayname" value="ebbha"/>
+    <attributes name="referenceWidth" value="375"/>
+    <attributes name="isNewAppWithRespectToAndroidWearPackageName" value="true"/>
+    <attributes name="build" value="debug"/>
+    <attributes name="studiovizproject" value="true"/>
+    <attributes name="marginsincludedinwidgetcontainerweight" value="true"/>
+    <attributes name="mwportkey" value="80"/>
+    <attributes name="andwearapppackagekey" value="com.orgname.ebbha"/>
+    <attributes name="mwhttpsportkey" value="443"/>
+</properties>
