@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -24,27 +24,27 @@
     ],
     "_percent_": true,
     "_skin_": "sa5bfccfdc7d425281dcc16b52c0daf8",
+    "_top_": {
+        "type": "string",
+        "value": "0"
+    },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMain",
+    "id": "flxBackground",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "efab4911c61d4e499c59de7539dcb77e",
     "layouttype": 2,
-    "minheight": {
-        "type": "string",
-        "value": "50%"
-    },
     "name": "kony.ui.FlexContainer",
     "parent": "frmHome",
     "pf": "frmHome",
