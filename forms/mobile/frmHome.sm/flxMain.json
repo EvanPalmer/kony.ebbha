@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -29,7 +29,7 @@
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [],
     "clipbounds": true,
@@ -41,6 +41,10 @@
     "isvisible": true,
     "kuid": "efab4911c61d4e499c59de7539dcb77e",
     "layouttype": 2,
+    "minheight": {
+        "type": "string",
+        "value": "50%"
+    },
     "name": "kony.ui.FlexContainer",
     "parent": "frmHome",
     "pf": "frmHome",
