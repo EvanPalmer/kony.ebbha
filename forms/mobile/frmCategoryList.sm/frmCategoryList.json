@@ -29,9 +29,7 @@
         "needAppMenu": false
     },
     "canUpdateUI": true,
-    "children": [
-        "topNavigation"
-    ],
+    "children": [],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -93,7 +91,7 @@
         "needAppMenu": false
     },
     "kuid": "b13e4c88bd9443e9abe194e4ad609286",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,

@@ -30,7 +30,8 @@
     },
     "canUpdateUI": true,
     "children": [
-        "topNavigation"
+        "topNavigation",
+        "flxMain"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -93,7 +94,7 @@
         "needAppMenu": false
     },
     "kuid": "fcb4fc237ac14076bbf95b237ea90117",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,

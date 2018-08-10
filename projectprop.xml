@@ -35,4 +35,8 @@
     <attributes name="mwportkey" value="80"/>
     <attributes name="andwearapppackagekey" value="com.orgname.ebbha"/>
     <attributes name="mwhttpsportkey" value="443"/>
+    <attributes name="APPLICATION_THEME" value="default"/>
+    <attributes name="SELECTED_THEME" value="default"/>
+    <attributes name="lastmodifiedtime" value="0"/>
+    <attributes name="Server side mobile web" value="false"/>
 </properties>

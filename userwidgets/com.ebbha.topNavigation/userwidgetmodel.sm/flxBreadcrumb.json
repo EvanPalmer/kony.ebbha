@@ -1,0 +1,68 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "75dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 6,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s55f8d1c0edd4eb0bda35cac07cf30c9",
+    "_top_": {
+        "type": "string",
+        "value": "75dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "allboxes": [],
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "children": [
+        "lblBreadcrumbHome",
+        "lblBreadcrumbArrow1",
+        "lblBreadcrumbCategory",
+        "lblBreadcrumbArrow2",
+        "lblBreadcrumbProduct"
+    ],
+    "clipbounds": true,
+    "containerweight": 100,
+    "enablescrolling": true,
+    "id": "flxBreadcrumb",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "f7c0580186da4999b05c1d034221de35",
+    "layouttype": 3,
+    "name": "kony.ui.FlexContainer",
+    "parent": "flxSlideDown",
+    "pf": "userwidgetmodel",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
+    "zindex": 1
+}

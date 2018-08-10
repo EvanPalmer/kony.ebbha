@@ -49,7 +49,7 @@
     "isvisible": true,
     "kuid": "fbc5ffaa8e90419db39d38fa4e3503ae",
     "name": "kony.ui.Image2",
-    "parent": "flxParent",
+    "parent": "flxNavigation",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
