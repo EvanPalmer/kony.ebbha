@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s5761e6564f2430d99b3bc84b112316d",
-    "_text_": "Category",
+    "_text_": ">",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -42,7 +42,7 @@
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblBreadcrumbCategory",
+    "id": "lblBreadcrumbArrow2",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f7e5cf14b1fc416dbed400aff3ff38e7",
+    "kuid": "c3597700c09b4c74b72e71391b2b2786",
     "name": "kony.ui.Label",
     "parent": "flxBreadcrumb",
-    "pf": "userwidgetmodel",
+    "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

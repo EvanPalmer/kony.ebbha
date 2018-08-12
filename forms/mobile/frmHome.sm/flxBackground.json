@@ -35,7 +35,10 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "flxBreadcrumb",
+        "segHome"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
@@ -44,9 +47,9 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "efab4911c61d4e499c59de7539dcb77e",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmHome",
+    "parent": "flxMain",
     "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s5761e6564f2430d99b3bc84b112316d",
-    "_text_": ">",
+    "_text_": "Product",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -42,7 +42,7 @@
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblBreadcrumbArrow1",
+    "id": "lblBreadcrumbProduct",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "b587c16153764bdeb6029c5b7f135023",
+    "kuid": "c6674877105d4e9ca74634029de7d982",
     "name": "kony.ui.Label",
     "parent": "flxBreadcrumb",
-    "pf": "userwidgetmodel",
+    "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

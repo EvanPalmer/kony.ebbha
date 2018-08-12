@@ -36,7 +36,6 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxBreadcrumb",
         "flxSearch"
     ],
     "clipbounds": true,

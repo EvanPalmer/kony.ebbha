@@ -34,7 +34,7 @@
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmProductPageController"
+            "name": "frmProductController"
         }
     },
     "currentLocale": "default",
@@ -44,7 +44,7 @@
     "device": "iPhoneX",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "id": "frmProductPage",
+    "id": "frmProduct",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

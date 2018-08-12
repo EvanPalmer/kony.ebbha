@@ -1,11 +1,13 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_children_": [],
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
     "_height_": {
         "type": "string",
-        "value": "150dp"
+        "value": "75dp"
     },
     "_left_": {
         "type": "string",
@@ -17,7 +19,7 @@
         0,
         0
     ],
-    "_orientation_": 1,
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
@@ -25,35 +27,38 @@
         0
     ],
     "_percent_": true,
-    "_render_": true,
     "_skin_": "s55f8d1c0edd4eb0bda35cac07cf30c9",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
-    "autogrowmode": 1,
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
+    "children": [
+        "lblBreadcrumbHome",
+        "lblBreadcrumbArrow1",
+        "lblBreadcrumbCategory",
+        "lblBreadcrumbArrow2",
+        "lblBreadcrumbProduct"
+    ],
     "clipbounds": true,
-    "containerweight": 0,
-    "data": {},
-    "id": "topNavigation",
+    "containerweight": 100,
+    "enablescrolling": true,
+    "id": "flxBreadcrumb",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "b46ec7c57c5a4ef999fa5248a0104f0a",
-    "layouttype": 2,
-    "masterType": 1,
-    "name": "kony.ui.UserWidgetInstance",
-    "parent": "flxMain",
+    "kuid": "c745ae9b22454ed1b59ef1869c71d1e8",
+    "layouttype": 3,
+    "name": "kony.ui.FlexContainer",
+    "parent": "flxBackground",
     "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
+    "snapgridsize": 10,
     "snaptogrid": true,
-    "sourceUserWidget": "baa866a2105849839de5c8446c4f8b22",
-    "wType": "UserWidgetInstance",
-    "zindex": 10
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
+    "zindex": 1
 }

@@ -30,8 +30,7 @@
     },
     "canUpdateUI": true,
     "children": [
-        "topNavigation",
-        "flxBackground"
+        "flxMain"
     ],
     "containerweight": 100,
     "controllerInfo": {
