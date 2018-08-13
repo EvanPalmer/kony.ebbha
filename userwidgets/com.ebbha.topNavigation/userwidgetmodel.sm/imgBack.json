@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "90%"
+        "value": "85%"
     },
     "_left_": {
         "type": "string",
@@ -24,16 +24,16 @@
         0
     ],
     "_skin_": "s618f68fd21c45c98ece87ab00a68724",
-    "_src_": "slider.png",
-    "_top_": {
-        "type": "string",
-        "value": "5%"
-    },
+    "_src_": "bbback.png",
     "_width_": {
         "type": "string",
         "value": "20%"
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",

@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "number",
-        "value": "100"
+        "type": "string",
+        "value": "700dp"
     },
     "_left_": {
         "type": "string",

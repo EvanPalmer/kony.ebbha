@@ -21,19 +21,23 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "5%"
+        "value": "5.00%"
     },
     "_skin_": "s618f68fd21c45c98ece87ab00a68724",
-    "_src_": "zoomout.png",
+    "_src_": "bbsearch.png",
     "_top_": {
         "type": "string",
-        "value": "5%"
+        "value": "0%"
     },
     "_width_": {
         "type": "string",
         "value": "20%"
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",

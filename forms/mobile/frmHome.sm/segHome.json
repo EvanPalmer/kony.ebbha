@@ -24,12 +24,12 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "90%"
+        "value": "540dp"
     },
     "_indicator_": "none",
     "_left_": {
         "type": "string",
-        "value": "5%"
+        "value": "0%"
     },
     "_margin_": [
         0,
@@ -46,7 +46,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "5%"
+        "value": "0%"
     },
     "_width_": {
         "type": "string",
@@ -54,6 +54,10 @@
     },
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "counter": "02",
     "focusedindex": null,

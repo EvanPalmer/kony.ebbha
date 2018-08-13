@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "5.08%"
     },
     "_margin_": [
         0,
@@ -25,13 +25,9 @@
     "_placeholder_": "Placeholder",
     "_skin_": "s862c193b9244d12b7a38332f95182fb",
     "_text_": "Search",
-    "_top_": {
-        "type": "string",
-        "value": "13dp"
-    },
     "_width_": {
         "type": "string",
-        "value": "260dp"
+        "value": "60%"
     },
     "autocapitalize": "none",
     "autocomplete": false,
@@ -39,8 +35,8 @@
     "autofilter": false,
     "canUpdateUI": true,
     "centery": {
-        "type": "number",
-        "value": "50"
+        "type": "string",
+        "value": "50%"
     },
     "containerheight": "",
     "containerheightmode": 1,
