@@ -36,8 +36,8 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "flxNavigation",
-        "flxSlideDown"
+        "flxSlideDown",
+        "flxNavigation"
     ],
     "clipbounds": true,
     "containerweight": 100,

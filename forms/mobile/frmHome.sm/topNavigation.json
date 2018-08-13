@@ -4,8 +4,8 @@
     "__parentReadjusting__": false,
     "_children_": [],
     "_height_": {
-        "type": "string",
-        "value": "75dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",

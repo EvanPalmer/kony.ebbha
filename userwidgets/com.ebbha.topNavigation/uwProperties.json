@@ -16,7 +16,24 @@
             "widgets": []
         },
         "properties": {
-            "custom": [],
+            "custom": [
+                {
+                    "access": "Read",
+                    "defaultValue": "",
+                    "group": "General",
+                    "kuid": "h2693a958118490895b7f6c95d2c8142",
+                    "originalPropertyKey": "myFormId",
+                    "propertyIndex": 3,
+                    "propertyKey": "myFormId",
+                    "pw": {
+                        "displayName": "Underlying Form ID",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
             "passthrough": [
                 {
                     "access": "Enable",
