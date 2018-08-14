@@ -663,7 +663,7 @@
     <attributes name="spamanifestjson" value=""/>
     <attributes name="remoteSystem" value="false"/>
     <attributes name="win8toastcapablekey" value="Not set"/>
-    <attributes name="fabric_runtime_app_version" value="Linked"/>
+    <attributes name="fabric_runtime_app_version" value="1.0"/>
     <attributes name="UseSQLCipherFIPSandwear" value="false"/>
     <attributes name="SET_PROCESS_LIMIT" value="false"/>
     <attributes name="wp10contacts" value="false"/>

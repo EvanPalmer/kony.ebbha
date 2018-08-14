@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "flxBreadcrumb",
-        "segHome"
+        "segCategories"
     ],
     "clipbounds": true,
     "containerweight": 100,

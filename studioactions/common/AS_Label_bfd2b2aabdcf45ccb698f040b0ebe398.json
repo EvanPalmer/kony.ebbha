@@ -1,0 +1,39 @@
+{
+    "AS_Label_bfd2b2aabdcf45ccb698f040b0ebe398": {
+        "id": "AS_Label_bfd2b2aabdcf45ccb698f040b0ebe398",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "uwu713554b58b54fbe882cd5e48c44ac1e",
+            "type": "userwidgets",
+            "KUID": "u713554b58b54fbe882cd5e48c44ac1e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___a9f334ed947b4b56a9d38ad998e27807",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "animateSearch",
+            "display": "animateSearch",
+            "inputparams": [{
+                "name": "eventobject"
+            }, {
+                "name": "x"
+            }, {
+                "name": "y"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

@@ -2,6 +2,9 @@ define(function() {
 
 	return {
         searchIsOut: false,
+        zIndexOut: 10,
+        zIndexIn: 1,
+
 		constructor: function(baseConfig, layoutConfig, pspConfig) {
 	        this.view.flxSlideDown.opacity = 0;
             this.searchIsOut = false;
@@ -18,9 +21,12 @@ define(function() {
         },
       
        animateSearch: function(eventobject, x, y) {
+       kony.print("!!!: animateSearch");
         if(this.searchIsOut){
 			this.doSlide();
         }else{
+          kony.print("!!!: Setting flxSlideDown.zIndex to: " + this.zIndexOut);
+		  this.view.flxSlideDown.zIndex = this.zIndexOut;
           this.doFade();
         }
        },
@@ -55,6 +61,7 @@ define(function() {
        doSlide:function(){
         var top = "75dp";
         var nextStep = this.animationDone;
+        var zindex = 1;
 
         if(this.searchIsOut){
           top = "0dp";
@@ -80,8 +87,13 @@ define(function() {
        },
       
        animationDone : function(){ 
+          kony.print("!!!: Setting flxSlideDown.zIndex to: " + this.zIndexOut);
+          if(this.searchIsOut){
+			this.view.flxSlideDown.zIndex = this.zIndexIn;
+          }
+
           this.searchIsOut = !this.searchIsOut;
-          alert("done!");
+          kony.print("!!!: Animation complete. ");
         }
 	};
 });
