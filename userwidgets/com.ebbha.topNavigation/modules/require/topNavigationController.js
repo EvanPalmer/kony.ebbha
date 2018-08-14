@@ -1,25 +1,24 @@
 define(function() {
-
 	return {
         searchIsOut: false,
         zIndexOut: 200,
         zIndexIn: 1,
-
 		constructor: function(baseConfig, layoutConfig, pspConfig) {
-	        this.view.flxSlideDown.opacity = 0;
-            this.searchIsOut = false;
+	      this.view.flxSlideDown.opacity = 0;
+          this.searchIsOut = false;
 		},
 
 		//Logic for getters/setters of custom properties
 		initGettersSetters: function() {
-// 			defineGetter(this, "myFormId",function(){
-// 			  kony.print("!!@@!@!@defineGetter.myFormId: "+ this._myFormId);
-//               return this._myFormId;
-//             });
-//             defineSetter(this, "myFormId", function(myFormId){
-// 			  kony.print("!!@@!@!@defineSetter.myFormId: "+ myFormId);
-//               this._myFormId = myFormId;
-//             });
+			defineGetter(this, "myBackFormId",function(){
+			  kony.print("!!@@!@!@defineGetter.myBackFormId: "+ this._myBackFormId);
+              return this._myBackFormId;
+            });
+            defineSetter(this, "myBackFormId", function(myBackFormId){
+			  kony.print("!!@@!@!@defineSetter.myFormId: "+ myBackFormId);
+              this.view.imgBack.isVisible = true;
+              this._myBackFormId = myBackFormId;
+            });
         },
       
        animateSearch: function(eventobject, x, y) {
@@ -94,6 +93,12 @@ define(function() {
 
           this.searchIsOut = !this.searchIsOut;
           kony.print("!!!: Animation complete. ");
+        },
+      
+        goBack : function(){
+          var nav;
+          nav = new kony.mvc.Navigation(this.myBackFormId);
+          nav.navigate();
         }
 	};
 });

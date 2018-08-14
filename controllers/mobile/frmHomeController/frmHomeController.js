@@ -1,34 +1,24 @@
 define(function(){
-  //*****move to constants file
-  const serviceName = "BestBuyRoot";
-  const ebhaStringify = function (v) {
-    const cache = new Map();
-    return JSON.stringify(v, function (key, value) {
-      if (typeof value === 'object' && value !== null) {
-        if (cache.get(value)) {
-          // Circular reference found, discard key
-          return;
-        }
-        // Store value in our map
-        cache.set(value, true);
-      }
-      return value;
-    });
-  };
-  //*****move to constants file
-  var breadcrumb = [];
-
+  var breadcrumb = []; 
   return{ 
-
+    categoryId:null,
+    categoryName:null,
     init : function()
     {
-      //this.view.topNavigation.showBackButton = false;
-      
-      //this.view.topNavigation.myFormId = this.viewId;
       this.setAnimation();
-      this.getCategories();
+      this.getTopCategories();
     },
-
+    
+    preshow : function(){
+	  this.view.topNavigation.myBackFormId = this.viewId;
+      this.view.topNavigation.showBackButton = false;
+    },
+	
+    onNavigate : function(context, isBackNavigation){
+      var breadcrumbItem = this.popOffBreadcrumbOrNull();
+      if(breadcrumbItem === null) this.getTopCategories();
+      else this.getSubcategories(breadcrumbItem.id);
+    },
 
     pushToBreadcrumb : function(id, name){
       var item = {id : id, name : name};
@@ -81,23 +71,33 @@ define(function(){
       };
       var animationCallbacks = {"animationEnd":function(){kony.print("animation END");}};
       var animationDefObject={definition:animationObject,config:animationConfig,callbacks:animationCallbacks};
+	//#ifndef android
+      // this crashes my galaxy s8
       this.view.segCategories.setAnimations({visible:animationDefObject});
+    //#endif
     },
 
-    getCategories:function()
+    getTopCategories:function()
     {
       var operationName = "getCategoriesTopLevel";
       var inputParams = {
         "httpheaders": {}};
-      mfintegrationsecureinvokerasync(inputParams, serviceName, operationName, this.bindCategories);
+      mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
     },
 
     bindCategories: function(status, response){
       if(response.opstatus > 0)
       {
-        alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + JSON.stringify(response));
+        alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
       } else {
         var categories = response.categories;
+		
+        if(categories === null || categories === undefined || categories.length === 0){
+          var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
+          var productListContext = { categoryId : this.categoryId, categoryName : this.categoryName };
+          nav.navigate(productListContext);
+        }
+        
         var segCategories = this.view.segCategories;
         segCategories.widgetDataMap = { "lblCategoryName" : "name"};
         segCategories.setData(categories);
@@ -105,17 +105,25 @@ define(function(){
     },
 
     segmentSelected:function(eventObject, sectionNumber, rowNumber){
-      kony.print("!!!segmentSelected: " + ebhaStringify(eventObject));
-      kony.print("!!!sectionNumber: " + ebhaStringify(sectionNumber));
-      kony.print("!!!rowNumber: " + ebhaStringify(rowNumber));
-      var categoryId = eventObject.selecteditems[0].id;
-      var categoryName = eventObject.selecteditems[0].name;
-      this.pushToBreadcrumb(categoryId, categoryName);
-
+      kony.print("!!!eventObject: " + ebbhaAppConstants.ebbhaStringify(eventObject));
+      var selected = this.view.segCategories.selectedRowItems;
+      
+      if(selected === null) selected = eventObject.selecteditems;
+      
+      this.categoryId = selected[0].id;
+      this.categoryName = selected[0].name;
+      this.pushToBreadcrumb(this.categoryId, this.categoryName);
+      this.getSubcategories(this.categoryId);
+    },
+    
+    getSubcategories:function(categoryId){
       var operationName = "getCategoriesByCategory";
       var inputParams = {"categoryId": categoryId,
                          "httpheaders": {}};
-      mfintegrationsecureinvokerasync(inputParams, serviceName, operationName, this.bindCategories);
+      mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
     }
+    
+    
+    
   };
 });

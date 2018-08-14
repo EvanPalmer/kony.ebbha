@@ -1,0 +1,33 @@
+{
+    "AS_Image_bb2db8fa07dd41b0b54c1c8efaae6d9a": {
+        "id": "AS_Image_bb2db8fa07dd41b0b54c1c8efaae6d9a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "uwu713554b58b54fbe882cd5e48c44ac1e",
+            "type": "userwidgets",
+            "KUID": "u713554b58b54fbe882cd5e48c44ac1e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___g639f96c8aad42618b41522eef369ec4",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "goBack",
+            "display": "goBack",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

@@ -21,12 +21,12 @@
                     "access": "Read",
                     "defaultValue": "",
                     "group": "General",
-                    "kuid": "e619b488aff142b3a9d7850e25fd4068",
-                    "originalPropertyKey": "myFormId",
+                    "kuid": "i00436e517fb43ca96067ae4cd7fee5f",
+                    "originalPropertyKey": "myBackFormId",
                     "propertyIndex": 3,
-                    "propertyKey": "myFormId",
+                    "propertyKey": "myBackFormId",
                     "pw": {
-                        "displayName": "Underlying Form ID",
+                        "displayName": "The form to go BACK to",
                         "uiRepresentation": "Label-Textbox"
                     },
                     "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",
@@ -41,7 +41,7 @@
                     "kuid": "d28a60299a4c4d9587f25808aa518ac9",
                     "originalPropertyKey": "isVisible",
                     "propertyIndex": 2,
-                    "propertyKey": "showBackButton",
+                    "propertyKey": "isVisible1",
                     "pw": {
                         "access": "readwrite",
                         "category": "look",
