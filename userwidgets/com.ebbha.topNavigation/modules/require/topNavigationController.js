@@ -2,7 +2,7 @@ define(function() {
 
 	return {
         searchIsOut: false,
-        zIndexOut: 10,
+        zIndexOut: 200,
         zIndexIn: 1,
 
 		constructor: function(baseConfig, layoutConfig, pspConfig) {
@@ -13,9 +13,11 @@ define(function() {
 		//Logic for getters/setters of custom properties
 		initGettersSetters: function() {
 // 			defineGetter(this, "myFormId",function(){
+// 			  kony.print("!!@@!@!@defineGetter.myFormId: "+ this._myFormId);
 //               return this._myFormId;
 //             });
 //             defineSetter(this, "myFormId", function(myFormId){
+// 			  kony.print("!!@@!@!@defineSetter.myFormId: "+ myFormId);
 //               this._myFormId = myFormId;
 //             });
         },
@@ -25,7 +27,6 @@ define(function() {
         if(this.searchIsOut){
 			this.doSlide();
         }else{
-          kony.print("!!!: Setting flxSlideDown.zIndex to: " + this.zIndexOut);
 		  this.view.flxSlideDown.zIndex = this.zIndexOut;
           this.doFade();
         }
@@ -87,7 +88,6 @@ define(function() {
        },
       
        animationDone : function(){ 
-          kony.print("!!!: Setting flxSlideDown.zIndex to: " + this.zIndexOut);
           if(this.searchIsOut){
 			this.view.flxSlideDown.zIndex = this.zIndexIn;
           }

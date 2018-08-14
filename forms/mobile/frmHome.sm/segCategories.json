@@ -65,6 +65,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segCategories",
+    "ide_onRowClick": "AS_Segment_aa965844f19744da8254091d792eaf3b",
     "info": null,
     "ipad": {
         "psp": {
@@ -105,7 +106,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": null,
+    "selectedsectionindex": 0,
     "selectionbehavior": "default",
     "separatorrequired": false,
     "showscrollbars": false,

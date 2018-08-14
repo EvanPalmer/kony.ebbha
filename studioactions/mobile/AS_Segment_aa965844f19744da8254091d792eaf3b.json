@@ -1,0 +1,43 @@
+{
+    "AS_Segment_aa965844f19744da8254091d792eaf3b": {
+        "id": "AS_Segment_aa965844f19744da8254091d792eaf3b",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmHome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "fcb4fc237ac14076bbf95b237ea90117"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___d2851a280df54c5595f775530de32feb",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "segmentSelected",
+            "display": "segmentSelected",
+            "inputparams": [{
+                "name": "eventObject",
+                "value": " eventobject"
+            }, {
+                "name": "sectionNumber",
+                "value": " sectionNumber"
+            }, {
+                "name": "rowNumber",
+                "value": " rowNumber"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
