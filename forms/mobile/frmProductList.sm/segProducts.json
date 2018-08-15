@@ -4,21 +4,21 @@
     "__parentReadjusting__": false,
     "_data_": [
         {
-            "lblCategoryName": {
+            "imgThumbnail": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblPrice": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
-            }
-        },
-        {
-            "lblCategoryName": {
+                "text": ""
+            },
+            "lblRating": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
-            }
-        },
-        {
-            "lblCategoryName": {
+                "text": ""
+            },
+            "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
+                "text": ""
             }
         }
     ],
@@ -46,7 +46,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "0%"
+        "value": "15dp"
     },
     "_width_": {
         "type": "string",
@@ -59,13 +59,13 @@
         "value": "50%"
     },
     "containerweight": 100,
-    "counter": "02",
+    "counter": "00",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
     "hasSections": false,
     "id": "segProducts",
-    "ide_onRowClick": "AS_Segment_jea34ccb23774157bbe277a92b7beede",
+    "ide_onReachingEnd": "AS_Segment_a2b78c9d19cd4fbf93c2623c57963597",
     "info": null,
     "ipad": {
         "psp": {
@@ -93,11 +93,11 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainselection": false,
-    "rowTemplateId": "cc26bb87402446639ed7fce39ce68407",
-    "rowcounter": 2,
+    "rowTemplateId": "b82c1aac8f1649ca9ba77014ac6a39e6",
+    "rowcounter": 0,
     "rowfocusskin": "s2510628b0eb46bca7b43268671a37b4",
     "rowskin": "s03360aba37d4f079dc412d67c1642e0",
-    "rowtemplate": "flxCategoryName",
+    "rowtemplate": "flxProduct",
     "screenlevelwidget": false,
     "seccounter": 0,
     "sectionheaderskin": "sbdca1ac64d34bf98e26b73a99d5d3b3",
@@ -106,7 +106,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": null,
+    "selectedsectionindex": 0,
     "selectionbehavior": "default",
     "separatorrequired": false,
     "showscrollbars": false,
@@ -114,8 +114,12 @@
     "wType": "Segment",
     "widgetalignment": 5,
     "widgetdatamap": {
-        "flxCategoryName": "flxCategoryName",
-        "lblCategoryName": "lblCategoryName"
+        "flxDetail": "flxDetail",
+        "flxProduct": "flxProduct",
+        "imgThumbnail": "imgThumbnail",
+        "lblPrice": "lblPrice",
+        "lblRating": "lblRating",
+        "lblTitle": "lblTitle"
     },
     "zindex": 50
 }

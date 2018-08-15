@@ -36,9 +36,7 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblCategoryName",
-        "flxNoResults",
-        "segProducts"
+        "flxProduct"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -47,11 +45,11 @@
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "de67f154ab2446bda5f9da11d672f05a",
+    "kuid": "gb52f75c34a04122948c9e5edd3c4402",
     "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "flxMain",
-    "pf": "frmProductList",
+    "pf": "frmProduct",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,

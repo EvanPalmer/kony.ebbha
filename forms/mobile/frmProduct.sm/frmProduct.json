@@ -29,7 +29,9 @@
         "needAppMenu": false
     },
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "flxMain"
+    ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {

@@ -1,16 +1,13 @@
 {
-    "AS_Label_bfd2b2aabdcf45ccb698f040b0ebe398": {
-        "id": "AS_Label_bfd2b2aabdcf45ccb698f040b0ebe398",
+    "AS_TextField_e40d44f6bf1c481cb53dc6919fb22407": {
+        "id": "AS_TextField_e40d44f6bf1c481cb53dc6919fb22407",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }, {
             "datatype": "string",
-            "name": "x"
-        }, {
-            "datatype": "string",
-            "name": "y"
+            "name": "changedtext"
         }],
         "contextObj": {
             "name": "uwu713554b58b54fbe882cd5e48c44ac1e",
@@ -19,10 +16,10 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___a9f334ed947b4b56a9d38ad998e27807",
+            "id": "INVOKE_FUNCTION___dc6be09ca45743cfa12f4f4363695124",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "doCancel",
-            "display": "doCancel",
+            "sequenceKUID": "doSearch",
+            "display": "doSearch",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

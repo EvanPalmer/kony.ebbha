@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "625dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -23,40 +23,36 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sa5bfccfdc7d425281dcc16b52c0daf8",
+    "_skin_": "s55f8d1c0edd4eb0bda35cac07cf30c9",
     "_top_": {
         "type": "string",
-        "value": "0"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
-    "children": [
-        "lblCategoryName",
-        "flxNoResults",
-        "segProducts"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxBackground",
+    "id": "flxTopPart",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "de67f154ab2446bda5f9da11d672f05a",
-    "layouttype": 4,
+    "kuid": "f474d562fb2e41eb9f4fbc65975cacc5",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxMain",
-    "pf": "frmProductList",
+    "parent": "flxProduct",
+    "pf": "frmProduct",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 100
+    "zindex": 1
 }

@@ -1,0 +1,18 @@
+{
+    "AS_Segment_b6a92d66499b492da33ef428ef6dd556": {
+        "id": "AS_Segment_b6a92d66499b492da33ef428ef6dd556",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmProductList",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b13e4c88bd9443e9abe194e4ad609286"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

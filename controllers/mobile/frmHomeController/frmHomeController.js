@@ -2,7 +2,8 @@ define(function(){
   var breadcrumb = []; 
   return{ 
     categoryId:null,
-    categoryName:null,
+    categoryName:null,    
+
     init : function()
     {
       this.setAnimation();
@@ -122,8 +123,6 @@ define(function(){
                          "httpheaders": {}};
       mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
     }
-    
-    
     
   };
 });

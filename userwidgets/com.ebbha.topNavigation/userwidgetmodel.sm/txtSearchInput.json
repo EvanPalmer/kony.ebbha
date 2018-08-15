@@ -22,9 +22,9 @@
         0,
         0
     ],
-    "_placeholder_": "Placeholder",
+    "_placeholder_": "Search",
     "_skin_": "s862c193b9244d12b7a38332f95182fb",
-    "_text_": "Search",
+    "_text_": "",
     "_width_": {
         "type": "string",
         "value": "60%"
@@ -44,6 +44,7 @@
     "contentalignment": 4,
     "focusskin": "s9c3d1510829443d9a9b00954eda0fa4",
     "id": "txtSearchInput",
+    "ide_onDone": "AS_TextField_e40d44f6bf1c481cb53dc6919fb22407",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

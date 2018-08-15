@@ -18,16 +18,7 @@
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "segmentSelected",
             "display": "segmentSelected",
-            "inputparams": [{
-                "name": "eventObject",
-                "value": " eventobject"
-            }, {
-                "name": "sectionNumber",
-                "value": " sectionNumber"
-            }, {
-                "name": "rowNumber",
-                "value": " rowNumber"
-            }],
+            "inputparams": [],
             "callbackType": null,
             "disabled": null,
             "source": "controller"

@@ -16,5 +16,8 @@ const ebbhaAppConstants = {
         }
         return value;
       });
-  	}
+  	},
+    isNullOrEmpty : function(value){
+      return value === null || value === undefined || value.length === 0;
+    }
 };

@@ -1,0 +1,21 @@
+{
+    "AS_Segment_d8415424c66c41b68dcf9e8769b29999": {
+        "id": "AS_Segment_d8415424c66c41b68dcf9e8769b29999",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onReachingEnd_bbe1aa36ec7247a9922c63aa03b4448b",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onReachingEnd",
+            "display": "onReachingEnd",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
