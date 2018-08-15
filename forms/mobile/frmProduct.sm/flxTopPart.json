@@ -35,7 +35,10 @@
     "allboxes": [],
     "autogrowmode": 1,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "flxImageAndMore",
+        "flxDetail"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,

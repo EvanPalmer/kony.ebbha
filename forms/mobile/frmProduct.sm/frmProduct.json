@@ -47,6 +47,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmProduct",
+    "ide_postShow": "AS_Form_ef256b7ca38c4934bb05af37d79c5cca",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

@@ -2,4 +2,14 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
+    /** onTouchEnd defined for lblMore **/
+    AS_Label_i9468f39fad04923a5577972bbf413f7: function AS_Label_i9468f39fad04923a5577972bbf413f7(eventobject, x, y) {
+        var self = this;
+        alert("More!");
+    },
+    /** postShow defined for frmProduct **/
+    AS_Form_ef256b7ca38c4934bb05af37d79c5cca: function AS_Form_ef256b7ca38c4934bb05af37d79c5cca(eventobject) {
+        var self = this;
+        return self.onPostShow.call(this);
+    }
 });

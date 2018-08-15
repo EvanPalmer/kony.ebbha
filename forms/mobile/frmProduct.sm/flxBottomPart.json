@@ -35,7 +35,9 @@
     "allboxes": [],
     "autogrowmode": 1,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "lblDescription"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,

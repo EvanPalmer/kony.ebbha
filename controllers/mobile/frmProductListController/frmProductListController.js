@@ -87,7 +87,7 @@ define({
     for(var i = 0; i < this.products.length; i++){
       this.products[i].displayPrice = "$" + this.products[i].price;
       this.products[i].imageThumbnail = this.products[i].imageUrls.thumbnail;
-      this.products[i].rating = "...err.. five?";
+      this.products[i].rating = this.products[i].customerReviewAverage;
       if(this.products[i].isOnSale){
         this.products[i].template = "flxProductListSale";
         this.products[i].displayPrice = "$" + this.products[i].salePrice;
@@ -109,6 +109,7 @@ define({
       duration: 0.75,
       fillMode: kony.anim.FILL_MODE_FORWARDS
     };
+
     var animationCallbacks = {"animationEnd":function(){kony.print("animation END");}};
     var animationDefObject={definition:animationObject,config:animationConfig,callbacks:animationCallbacks};
     //#ifndef android
@@ -121,6 +122,9 @@ define({
       this.searchPage = this.searchPage + 1;
       this.getProductsBySearchText();
     }
+  },
+  segProductsOnRowClick : function(){
+    var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
+    nav.navigate(params);
   }
-
 });

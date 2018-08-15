@@ -23,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s55f8d1c0edd4eb0bda35cac07cf30c9",
+    "_skin_": "se9facd8fe124dd795b843155ec95ceb",
     "_top_": {
         "type": "string",
         "value": "2%"
@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "flxTopPart",
-        "flxBottomPart"
+        "flxBottomPart",
+        "flxLine"
     ],
     "clipbounds": true,
     "containerweight": 100,
