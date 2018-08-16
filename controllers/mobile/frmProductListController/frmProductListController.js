@@ -14,9 +14,8 @@ define({
   onPostShow : function(){
     this.setAnimation();
   },
-  
-  onNavigate : function(context, isBackNavigation){
 
+  onNavigate : function(context, isBackNavigation){
     // test data
     //       this.categoryId = "abcat0300000";
     //       this.categoryName = "Overridden category!";
@@ -27,11 +26,12 @@ define({
         this.categoryId = context.categoryId;
         this.categoryName = context.categoryName;
       }
-
       if(!ebbhaAppConstants.isNullOrEmpty(context.searchTerm)){
         this.searchTerm = context.searchTerm;
       }
     }
+
+    kony.print("Gonna get the products for CategoryID: " + this.categoryId);
     if(this.isASearch()){
       this.view.lblCategoryName.text = "Results for: " + this.searchTerm;
       this.getProductsBySearchText(this.searchTerm);
@@ -40,11 +40,11 @@ define({
       this.getProductListByCategoryId(this.categoryId);
     }
   },
-  
+
   isASearch : function(){
     return !ebbhaAppConstants.isNullOrEmpty(this.searchTerm);
   },
-  
+
   getProductsBySearchText:function(){
     var operationName = "getProductsBySearchText";
     var inputParams = { "searchText": this.searchTerm,
@@ -52,36 +52,54 @@ define({
                        "httpheaders": {} };
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
-  
+
   getProductListByCategoryId:function(categoryId){
     var operationName = "getProductsByCategoryId";
     var inputParams = { "categoryId": categoryId,
                        "httpheaders": {} };
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
-  
+
   bindProducts: function(status, response){
+    this.view.lblNoResults.isVisible = false;
+    this.view.lblNoResults.height = 0;
+    this.view.flxNoResults.isVisible = false;
+    this.view.flxNoResults.height = 0;
+
     if(response.opstatus > 0)
     {
       alert("ERROR! Retreive Products unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
-      this.view.flxNoResults.isVisible = true;
+      this.view.lblNoResults.isVisible = true;
+      this.view.lblNoResults.height = 100;
     } else {
       this.products = response.products;
+      kony.print("Gonna bind the old products list for these products: " + ebbhaAppConstants.ebbhaStringify(this.products));
+
       this.productId = response.productId;
       this.finalPageReached = false;
 
       if(ebbhaAppConstants.isNullOrEmpty(this.products)) {
+        kony.print("Products is empty!");
+        this.view.lblNoResults.isVisible = true;
+        this.view.lblNoResults.height = 100;
         this.view.flxNoResults.isVisible = true;
-        this.finalPageReached = true;
-      }else{
-        this.view.flxNoResults.isVisible = false;
-      }
+        this.view.flxNoResults.height = 100;
 
-      if(this.products === null || this.products === undefined || this.products.length === 1){
-        var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
-        var productListContext = { productId : this.productId };
-        nav.navigate(productListContext);
+        kony.print("The label is visiable and the height is at 100!");
+        this.finalPageReached = true;
+      } else {
+        kony.print("Products is NOT empty!");
       }
+      //       *****************************************
+      //		 This messes up the back button.
+      //       If they're comming back it should go back 
+      //       *****************************************
+      // 
+      //       if(this.products === null || this.products === undefined || this.products.length === 1){
+      //         var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
+      //         var productListContext = { productId : this.productId };
+      //         nav.navigate(productListContext);
+      //       }
 
       var segProducts = this.view.segProducts;
       this.updateProductsListForSaleItems();
@@ -97,7 +115,7 @@ define({
       }
     }
   },
-  
+
   // this should be done in the post processor, but the java perspective crashes my machine.
   // and there is no documentation to describe the "request" object in the javascript post processor.
   updateProductsListForSaleItems : function() {
@@ -105,13 +123,14 @@ define({
       this.products[i].displayPrice = "$" + this.products[i].price;
       this.products[i].imageThumbnail = this.products[i].imageUrls.thumbnail;
       this.products[i].rating = this.products[i].customerReviewAverage;
+
       if(this.products[i].isOnSale){
         this.products[i].template = "flxProductListSale";
         this.products[i].displayPrice = "$" + this.products[i].salePrice;
       }
     }
   },
-  
+
   setAnimation : function() {
     var transformStart = kony.ui.makeAffineTransform();
     var transformEnd = kony.ui.makeAffineTransform();
@@ -135,7 +154,7 @@ define({
     this.view.segProducts.setAnimations({visible:animationDefObject});
     //#endif
   },
-  
+
   onReachingEnd : function(){
     if(!this.finalPageReached){
       this.searchPage = this.searchPage + 1;

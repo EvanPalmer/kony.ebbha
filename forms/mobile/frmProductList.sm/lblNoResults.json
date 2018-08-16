@@ -55,7 +55,7 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "ffb8b1c08f51425dbb0a24aef54894e1",
     "name": "kony.ui.Label",
     "parent": "flxNoResults",

@@ -105,6 +105,7 @@ define(function() {
       this.animateSearch(eventobject, x, y);
 		this.view.txtSearchInput.text = null;
     },
+    
     doSearch : function(){
       alert("Doing search");
       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);

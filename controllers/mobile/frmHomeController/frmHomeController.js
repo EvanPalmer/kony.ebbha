@@ -1,6 +1,6 @@
 define(function(){
   var breadcrumb = []; 
-  return{ 
+  return { 
     categoryId:null,
     categoryName:null,    
 
@@ -8,6 +8,7 @@ define(function(){
     {
       this.setAnimation();
       this.getTopCategories();
+      this.refreshBreadCrumb();
     },
     
     preshow : function(){
@@ -21,19 +22,30 @@ define(function(){
       else this.getSubcategories(breadcrumbItem.id);
     },
 
-    pushToBreadcrumb : function(id, name){
-      var item = {id : id, name : name};
-      breadcrumb.push(item);
+    pushToBreadcrumb : function(categoryId, categoryName){
+      
+      if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
+        var item = {id : this.categoryId, name : this.categoryName};
+        breadcrumb.push(item);
+      }
+      
+      this.categoryId = categoryId;
+      this.categoryName = categoryName;
       this.refreshBreadCrumb();
     },
 
     popOffBreadcrumbOrNull : function(){
+      var lastItem = null;
       if(breadcrumb.length > 0){
-        var lastItem = breadcrumb.pop();
-        this.refreshBreadCrumb();
-        return lastItem;
+        lastItem = breadcrumb.pop();
+        this.categoryId = lastItem.id;        
+        this.categoryName = lastItem.name;
+      } else {
+        this.categoryId = null;        
+        this.categoryName = null;
       }
-      return null;
+      this.refreshBreadCrumb();
+      return lastItem;
     },
 
     refreshBreadCrumb : function(){
@@ -42,6 +54,9 @@ define(function(){
       var breadCrumbText = home;
       for(var i = 0; i < breadcrumb.length; i++){
         breadCrumbText = breadCrumbText + arrow + breadcrumb[i].name;
+      }
+      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName)){
+        breadCrumbText = breadCrumbText + arrow + this.categoryName;
       }
       this.view.lblBreadcrumb.text = breadCrumbText;
     },
@@ -84,16 +99,19 @@ define(function(){
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
       } else {
         var categories = response.categories;
-		
+		kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
+        
         if(categories === null || categories === undefined || categories.length === 0){
-          var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
+          kony.print("categories was empty! I have to redirect now.");
+		  var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
           var productListContext = { categoryId : this.categoryId, categoryName : this.categoryName };
           nav.navigate(productListContext);
+        } else {
+          kony.print("Categories was NOT empty! I'll bind some stuff.");
+          var segCategories = this.view.segCategories;
+          segCategories.widgetDataMap = { "lblCategoryName" : "name"};
+          segCategories.setData(categories);
         }
-        
-        var segCategories = this.view.segCategories;
-        segCategories.widgetDataMap = { "lblCategoryName" : "name"};
-        segCategories.setData(categories);
       }
     },
 
@@ -103,9 +121,7 @@ define(function(){
       
       if(selected === null) selected = eventObject.selecteditems;
       
-      this.categoryId = selected[0].id;
-      this.categoryName = selected[0].name;
-      this.pushToBreadcrumb(this.categoryId, this.categoryName);
+      this.pushToBreadcrumb(selected[0].id, selected[0].name);
       this.getSubcategories(this.categoryId);
     },
     
