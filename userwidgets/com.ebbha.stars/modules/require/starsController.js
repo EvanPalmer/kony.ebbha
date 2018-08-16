@@ -6,10 +6,14 @@ define(function() {
 		},
 		//Logic for getters/setters of custom properties
 		initGettersSetters: function() {
-
+	      defineSetter(this, "starRating", function(starRating){
+            this._starRating = starRating;
+            this.setStars(starRating);
+          });
 		},
-        setStars(number){
-
+      
+        setStars : function(rating){
+		  kony.print("!!! Rating Is: " + rating);
 		  var onImage = "staron.png";
 
           if(rating > 0)
@@ -22,7 +26,7 @@ define(function() {
           }
           if(rating > 2)
           {
-            this.view.imgStar13.src = onImage;
+            this.view.imgStar3.src = onImage;
           }
           if(rating > 3)
           {

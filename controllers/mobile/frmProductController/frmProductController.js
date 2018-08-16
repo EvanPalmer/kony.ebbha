@@ -12,6 +12,7 @@ define({
     this.getProductDetails();
   },
   getProductDetails:function(){
+    ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductDetails";
     var inputParams = {
       				   "productId": this.productId,
@@ -38,17 +39,37 @@ define({
         this.view.lblAverageReview.text = "Not enough reviews.";
       }else{
         this.view.lblAverageReview.text = "Av. response: " + response.customerReviewAverage;
+        this.view.stars.starRating = response.customerReviewAverage;
       }
 
       this.view.lblDescription.text = response.description;
       this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
-	  this.view.segReviews.widgetDataMap = {
+      this.getReviews(response.sku);
+    }
+  },
+   getReviews:function(sku){
+    ebbhaAppConstants.showLoadingScreen();
+    kony.print("Getting the reviews for sku: " + sku);
+    var operationName = "getUserReviews";
+    var inputParams = {
+      				   "sku": sku,
+                       "httpheaders": {} 
+    				  };
+    
+    mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindReviews);
+  },
+   bindReviews: function(status, response){
+    kony.print("Got the reviews: " + ebbhaAppConstants.ebbhaStringify(response.reviews));
+    if(response.opstatus !== 0){
+       alert("ERROR! Retreive Review Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
+    }else{
+      this.view.segReviews.widgetDataMap = {
         lblTitle : "title",
         lblReviewerName : "reviewerName",
-        lblComment : "comment",
-        //lblTitle : "title" (rating)
+        lblComment : "comment"
       };
       this.view.segReviews.setData(response.reviews);
     }
-  },
- });
+    ebbhaAppConstants.dismissLoadingScreen();
+   }
+});

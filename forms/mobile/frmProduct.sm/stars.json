@@ -4,8 +4,8 @@
     "__parentReadjusting__": false,
     "_children_": [],
     "_height_": {
-        "type": "string",
-        "value": "75dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -33,26 +33,26 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "70%"
     },
     "autogrowmode": 1,
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,
     "data": {},
-    "id": "topNavigation",
+    "id": "stars",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d0dd2add7b3049fbaa9239ab7032bd9e",
+    "kuid": "b5b59010b3f847368190f9e111ed78bd",
     "layouttype": 2,
     "masterType": 1,
     "name": "kony.ui.UserWidgetInstance",
-    "parent": "flxMain",
+    "parent": "flxDetail",
     "pf": "frmProduct",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snaptogrid": true,
-    "sourceUserWidget": "baa866a2105849839de5c8446c4f8b22",
+    "sourceUserWidget": "g35d23438dd34bf3b0ac2a358e115c81",
     "wType": "UserWidgetInstance"
 }

@@ -2,24 +2,7 @@
     "classname": "stars",
     "definitions": {
         "apis": {
-            "custom": [
-                {
-                    "group": "General",
-                    "kuid": "he6cadaaf6f0485b9569262098270e34",
-                    "paramList": [
-                        {
-                            "name": "number"
-                        }
-                    ],
-                    "propertyKey": "setStars",
-                    "pw": {
-                        "displayName": "setStars",
-                        "uiRepresentation": "Label-Label-Button-Button"
-                    },
-                    "srcWgtKUID": "g35d23438dd34bf3b0ac2a358e115c81",
-                    "type": "event"
-                }
-            ],
+            "custom": [],
             "passthrough": []
         },
         "events": {
@@ -35,7 +18,26 @@
             "widgets": []
         },
         "properties": {
-            "custom": [],
+            "custom": [
+                {
+                    "access": "Write",
+                    "defaultValue": 0,
+                    "group": "General",
+                    "kuid": "bf5e27e7b0c94e928914ed43ea4e4d6c",
+                    "originalPropertyKey": "starRating",
+                    "propertyIndex": 1,
+                    "propertyKey": "starRating",
+                    "pw": {
+                        "displayName": "Star Rating",
+                        "type": "integer",
+                        "uiRepresentation": "Label-Textbox",
+                        "validationData": "^(\\+|-)?\\d+$"
+                    },
+                    "srcWgtKUID": "g35d23438dd34bf3b0ac2a358e115c81",
+                    "type": "integer",
+                    "value": ""
+                }
+            ],
             "passthrough": []
         },
         "widgets": {

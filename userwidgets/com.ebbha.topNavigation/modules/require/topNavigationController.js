@@ -29,7 +29,7 @@ define(function() {
         this.view.flxSlideDown.zIndex = this.zIndexOut;
         this.doFade();
       }
-      
+
 //     this.view.flxTopNavigation.animate(
 //     kony.ui.createAnimation({
 //         "100": {

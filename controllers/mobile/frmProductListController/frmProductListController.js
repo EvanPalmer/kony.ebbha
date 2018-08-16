@@ -47,6 +47,7 @@ define({
   },
 
   getProductsBySearchText:function(){
+    ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductsBySearchText";
     var inputParams = { "searchText": this.searchTerm,
                        "page" : this.searchPage,
@@ -55,6 +56,7 @@ define({
   },
 
   getProductListByCategoryId:function(categoryId){
+    ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductsByCategoryId";
     var inputParams = { "categoryId": categoryId,
                        "httpheaders": {} };
@@ -116,6 +118,7 @@ define({
         segProducts.addAll(this.products);
       }
     }
+    ebbhaAppConstants.dismissLoadingScreen();
   },
 
   // this should be done in the post processor, but the java perspective crashes my machine.

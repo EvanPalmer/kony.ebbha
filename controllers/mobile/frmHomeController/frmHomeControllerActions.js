@@ -16,5 +16,10 @@ define({
     AS_Form_a5c6887a244940e5acf69a6104fda90c: function AS_Form_a5c6887a244940e5acf69a6104fda90c(eventobject) {
         var self = this;
         return self.preshow.call(this);
+    },
+    /** postShow defined for frmHome **/
+    AS_Form_i8f8369c4ba1454cb72a74eb6da78e45: function AS_Form_i8f8369c4ba1454cb72a74eb6da78e45(eventobject) {
+        var self = this;
+        return self.onPostShow.call(this);
     }
 });

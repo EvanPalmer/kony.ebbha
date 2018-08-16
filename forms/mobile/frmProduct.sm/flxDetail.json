@@ -38,7 +38,8 @@
     "children": [
         "lblName",
         "lblPrice",
-        "lblAverageReview"
+        "lblAverageReview",
+        "stars"
     ],
     "clipbounds": true,
     "containerweight": 100,

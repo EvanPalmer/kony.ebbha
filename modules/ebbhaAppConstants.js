@@ -25,5 +25,13 @@ const ebbhaAppConstants = {
   
     isNullOrUndefined : function(value){
       return value === null || value === undefined;
+    },
+  
+  	showLoadingScreen : function(){
+      kony.application.showLoadingScreen(null, "loading", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, null);
+    },
+  
+  	dismissLoadingScreen : function(){
+      kony.application.dismissLoadingScreen();
     }
 };

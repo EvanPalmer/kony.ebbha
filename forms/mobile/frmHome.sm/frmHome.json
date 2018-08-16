@@ -20,6 +20,9 @@
     "addWidgetsdone": false,
     "allboxes": [],
     "android": {
+        "inTransitionConfig": {
+            "formAnimation": 2
+        },
         "needAppMenu": false,
         "psp": {
             "windowSoftInputMode": 2
@@ -48,6 +51,7 @@
     "enabledforidletimeout": false,
     "id": "frmHome",
     "ide_init": "AS_Form_bef0ab39eaa04b0eb10f1ec6ec711a32",
+    "ide_postShow": "AS_Form_i8f8369c4ba1454cb72a74eb6da78e45",
     "ide_preShow": "AS_Form_a5c6887a244940e5acf69a6104fda90c",
     "info": null,
     "initdone": false,
@@ -60,6 +64,11 @@
         "titleBar": false
     },
     "iphone": {
+        "inTransitionConfig": {
+            "transitionDirection": "fromLeft",
+            "transitionDuration": 0.3,
+            "transitionEffect": "none"
+        },
         "needAppMenu": false,
         "psp": {
             "inputAccessoryViewType": 4,
@@ -108,6 +117,11 @@
     "shellCSS": "iOS_iPhoneX",
     "snapgridsize": 10,
     "snaptogrid": true,
+    "spa": {
+        "inTransitionConfig": {
+            "formTransition": "leftCenter"
+        }
+    },
     "spaan": {
         "needAppMenu": false
     },
@@ -137,6 +151,11 @@
         "needAppMenu": false
     },
     "winphone8": {
+        "inTransitionConfig": {
+            "inTransition": "none",
+            "transitionMode": "none",
+            "transitionSpeed": 0
+        },
         "needAppMenu": false
     }
 }

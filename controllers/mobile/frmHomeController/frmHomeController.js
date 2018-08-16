@@ -17,6 +17,10 @@ define(function(){
       this.view.topNavigation.showBackButton = false;
     },
 	
+    onPostShow:function(){
+      ebbhaAppConstants.showLoadingScreen();
+    },
+    
     onNavigate : function(context, isBackNavigation){
       var breadcrumbItem = this.popOffBreadcrumbOrNull();
       if(breadcrumbItem === null) this.getTopCategories();
@@ -85,6 +89,7 @@ define(function(){
 
     getTopCategories:function()
     {
+      ebbhaAppConstants.showLoadingScreen();
       var operationName = "getCategoriesTopLevel";
       var inputParams = {
         "httpheaders": {}};
@@ -111,6 +116,7 @@ define(function(){
           segCategories.setData(categories);
         }
       }
+      ebbhaAppConstants.dismissLoadingScreen();
     },
 
     segmentSelected:function(eventObject, sectionNumber, rowNumber){
@@ -124,11 +130,12 @@ define(function(){
     },
     
     getSubcategories:function(categoryId){
+      ebbhaAppConstants.showLoadingScreen();
       var operationName = "getCategoriesByCategory";
       var inputParams = {"categoryId": categoryId,
                          "httpheaders": {}};
       mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
-    }
-    
+    },
+
   };
 });

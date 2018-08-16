@@ -6,19 +6,7 @@
         {
             "lblCategoryName": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
-            }
-        },
-        {
-            "lblCategoryName": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
-            }
-        },
-        {
-            "lblCategoryName": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Category Name"
+                "text": ""
             }
         }
     ],
@@ -59,7 +47,7 @@
         "value": "50%"
     },
     "containerweight": 100,
-    "counter": "02",
+    "counter": "00",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
@@ -94,7 +82,7 @@
     "retainflexpositionproperties": false,
     "retainselection": false,
     "rowTemplateId": "cc26bb87402446639ed7fce39ce68407",
-    "rowcounter": 2,
+    "rowcounter": 0,
     "rowfocusskin": "s2510628b0eb46bca7b43268671a37b4",
     "rowskin": "s03360aba37d4f079dc412d67c1642e0",
     "rowtemplate": "flxCategoryName",
