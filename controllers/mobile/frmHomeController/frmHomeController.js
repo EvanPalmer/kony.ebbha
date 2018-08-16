@@ -6,13 +6,14 @@ define(function(){
 
     init : function()
     {
-      this.setAnimation();
-      this.getTopCategories();
-      this.refreshBreadCrumb();
     },
     
     preshow : function(){
-	  this.view.topNavigation.myBackFormId = this.viewId;
+     this.setAnimation();
+     this.getTopCategories();
+     this.refreshBreadCrumb();
+
+      this.view.topNavigation.myBackFormId = this.viewId;
       this.view.topNavigation.showBackButton = false;
     },
 	
@@ -79,10 +80,7 @@ define(function(){
       
       var animationCallbacks = {"animationEnd":function(){kony.print("animation END");}};
       var animationDefObject={definition:animationObject,config:animationConfig,callbacks:animationCallbacks};
-	//#ifndef android
-      // this crashes my galaxy s8
       this.view.segCategories.setAnimations({visible:animationDefObject});
-    //#endif
     },
 
     getTopCategories:function()

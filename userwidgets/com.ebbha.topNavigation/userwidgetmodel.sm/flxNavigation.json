@@ -51,7 +51,7 @@
     "kuid": "h488b7b9f2a940afae2e81d0cab55785",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "topNavigation",
+    "parent": "flxTopNavigation",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

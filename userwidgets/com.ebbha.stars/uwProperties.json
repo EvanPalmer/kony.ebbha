@@ -1,0 +1,48 @@
+{
+    "classname": "stars",
+    "definitions": {
+        "apis": {
+            "custom": [
+                {
+                    "group": "General",
+                    "kuid": "he6cadaaf6f0485b9569262098270e34",
+                    "paramList": [
+                        {
+                            "name": "number"
+                        }
+                    ],
+                    "propertyKey": "setStars",
+                    "pw": {
+                        "displayName": "setStars",
+                        "uiRepresentation": "Label-Label-Button-Button"
+                    },
+                    "srcWgtKUID": "g35d23438dd34bf3b0ac2a358e115c81",
+                    "type": "event"
+                }
+            ],
+            "passthrough": []
+        },
+        "events": {
+            "custom": [],
+            "passthrough": []
+        },
+        "groups": {
+            "apis": [
+                "General"
+            ],
+            "events": [],
+            "properties": [],
+            "widgets": []
+        },
+        "properties": {
+            "custom": [],
+            "passthrough": []
+        },
+        "widgets": {
+            "expose": [],
+            "passthrough": []
+        }
+    },
+    "namespace": "com.ebbha",
+    "version": "1.0.0"
+}

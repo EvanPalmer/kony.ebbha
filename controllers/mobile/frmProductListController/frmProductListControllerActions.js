@@ -21,5 +21,10 @@ define({
     AS_Form_ca127481d3c0413e8562ac6ecfe91030: function AS_Form_ca127481d3c0413e8562ac6ecfe91030(eventobject) {
         var self = this;
         return self.onInit.call(this);
+    },
+    /** onHide defined for frmProductList **/
+    AS_Form_d6dfaa396b7b4351a09c524bfc513d55: function AS_Form_d6dfaa396b7b4351a09c524bfc513d55(eventobject) {
+        var self = this;
+        return self.onHide.call(this);
     }
 });

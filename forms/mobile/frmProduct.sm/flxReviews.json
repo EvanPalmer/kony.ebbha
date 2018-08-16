@@ -26,7 +26,7 @@
     "_skin_": "se9facd8fe124dd795b843155ec95ceb",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5dp"
     },
     "_width_": {
         "type": "string",
@@ -36,7 +36,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblCustomerReviewCount"
+        "lblCustomerReviewCount",
+        "segReviews"
     ],
     "clipbounds": true,
     "containerweight": 100,

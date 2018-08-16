@@ -1,6 +1,5 @@
 {
     "DNDConfig": null,
-    "__parentReadjusting__": false,
     "_height_": {
         "type": "ref",
         "value": "preferred"
@@ -36,25 +35,36 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "lblNoResults"
+        "flxTitle",
+        "lblReviewer",
+        "lblRating",
+        "lblDescription"
     ],
     "clipbounds": true,
+    "containerId": true,
     "containerweight": 100,
+    "controllerInfo": {
+        "default": {
+            "channel": "mobile",
+            "name": "flxTemplReviewController"
+        }
+    },
     "enablescrolling": true,
-    "id": "flxNoResults",
+    "friendlyName": "",
+    "id": "flxTemplReview",
     "info": null,
+    "isTemplate": true,
     "iscustomlayout": false,
-    "isvisible": false,
-    "kuid": "ec00641909da47b9b9f03b30b464eaed",
-    "layouttype": 2,
+    "isvisible": true,
+    "kuid": "a1b451c64ec14b7f903121d9d766fc7b",
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxBackground",
-    "pf": "frmProductList",
+    "parent": "segTemplReview",
+    "pf": "segTemplReview",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "widgetalignment": 1
 }

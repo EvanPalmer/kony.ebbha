@@ -1,13 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "ref",
         "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "2%"
     },
     "_margin_": [
         0,
@@ -15,46 +17,47 @@
         0,
         0
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "s55f8d1c0edd4eb0bda35cac07cf30c9",
+    "_right_": {
+        "type": "string",
+        "value": "2%"
+    },
+    "_skin_": "s618f68fd21c45c98ece87ab00a68724",
+    "_src_": "staroff.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "15%"
     },
-    "allboxes": [],
-    "autogrowmode": 1,
     "canUpdateUI": true,
-    "children": [
-        "flxSearch"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "flxSlideDown",
+    "context": {
+        "channel": "mobile",
+        "formID": "uwufb3b5a1ff184578b6eaeec4e9320680",
+        "templateType": "userwidgets",
+        "topLevelBox": null
+    },
+    "id": "imgStar4",
+    "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c71468990ffc4832973b77a6e24df222",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxTopNavigation",
+    "kuid": "d0a7f5d673624a73b094d10ff21ed4f9",
+    "name": "kony.ui.Image2",
+    "parent": "flxStars",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
     "zindex": 1
 }

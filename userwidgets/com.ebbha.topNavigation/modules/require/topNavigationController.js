@@ -29,6 +29,25 @@ define(function() {
         this.view.flxSlideDown.zIndex = this.zIndexOut;
         this.doFade();
       }
+      
+//     this.view.flxTopNavigation.animate(
+//     kony.ui.createAnimation({
+//         "100": {
+//             "stepConfig": {
+//                 "timingFunction": kony.anim.EASE
+//             },
+//             "width": "100%",
+//             "height": "75dp"
+//         }
+//     }), {
+//         "delay": 1,
+//         "iterationCount": 1,
+//         "fillMode": kony.anim.FILL_MODE_FORWARDS,
+//         "duration": 1000
+//     }, {
+//         "animationEnd": alert("Done")
+//     });
+      
     },
 
     doFade:function(){
@@ -101,9 +120,12 @@ define(function() {
       nav.navigate();
     },
 
-    doCancel : function(eventobject, x, y){
-      this.animateSearch(eventobject, x, y);
-		this.view.txtSearchInput.text = null;
+    doCancel : function(){
+      alert("invoking doCancel");
+      this.searchIsOut = true;
+      this.animateSearch();
+      this.view.txtSearchInput.text = null;
+      alert("doCancel done!");
     },
     
     doSearch : function(){

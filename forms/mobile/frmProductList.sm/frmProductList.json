@@ -48,6 +48,7 @@
     "enabledforidletimeout": false,
     "id": "frmProductList",
     "ide_init": "AS_Form_ca127481d3c0413e8562ac6ecfe91030",
+    "ide_onHide": "AS_Form_d6dfaa396b7b4351a09c524bfc513d55",
     "ide_postShow": "AS_Form_efcbfc86d4ae4e39982f5460e034f1a8",
     "info": null,
     "initdone": false,

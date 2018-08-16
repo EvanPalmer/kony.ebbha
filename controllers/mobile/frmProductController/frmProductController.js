@@ -1,9 +1,9 @@
 define({ 
   productId : 1,
   onInit : function(){
-    this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
   },
   onPostShow : function(){
+    this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
 //     this.productId = "1837061";
 //     this.getProductDetails();
   },
@@ -39,9 +39,16 @@ define({
       }else{
         this.view.lblAverageReview.text = "Av. response: " + response.customerReviewAverage;
       }
-      this.view.lblDescription.text = response.description;
 
-      this.view.lblCustomerReviewCount = "Number of reviews: " + response.customerReviewCount;
+      this.view.lblDescription.text = response.description;
+      this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
+	  this.view.segReviews.widgetDataMap = {
+        lblTitle : "title",
+        lblReviewerName : "reviewerName",
+        lblComment : "comment",
+        //lblTitle : "title" (rating)
+      };
+      this.view.segReviews.setData(response.reviews);
     }
   },
  });
