@@ -4,10 +4,6 @@
     "__parentReadjusting__": false,
     "_data_": [
         {
-            "flxTitle": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
@@ -16,16 +12,16 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Star rating here"
             },
-            "lblReviewer": {
+            "lblReviewerName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
         },
         {
-            "flxTitle": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
@@ -34,16 +30,16 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Star rating here"
             },
-            "lblReviewer": {
+            "lblReviewerName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
         },
         {
-            "flxTitle": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
@@ -52,15 +48,19 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Star rating here"
             },
-            "lblReviewer": {
+            "lblReviewerName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
         }
     ],
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "380dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -88,7 +88,7 @@
         "type": "string",
         "value": "90%"
     },
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "containerweight": 100,
     "counter": "02",
@@ -146,10 +146,10 @@
     "widgetalignment": 5,
     "widgetdatamap": {
         "flxTemplReview": "flxTemplReview",
-        "flxTitle": "flxTitle",
         "lblDescription": "lblDescription",
         "lblRating": "lblRating",
-        "lblReviewer": "lblReviewer"
+        "lblReviewerName": "lblReviewerName",
+        "lblTitle": "lblTitle"
     },
     "zindex": 1
 }

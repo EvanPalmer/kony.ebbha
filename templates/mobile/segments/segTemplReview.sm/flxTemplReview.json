@@ -35,8 +35,8 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "flxTitle",
-        "lblReviewer",
+        "lblTitle",
+        "lblReviewerName",
         "lblRating",
         "lblDescription"
     ],

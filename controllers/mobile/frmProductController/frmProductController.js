@@ -66,7 +66,7 @@ define({
       this.view.segReviews.widgetDataMap = {
         lblTitle : "title",
         lblReviewerName : "reviewerName",
-        lblComment : "comment"
+        lblDescription : "comment"
       };
       this.view.segReviews.setData(response.reviews);
     }
