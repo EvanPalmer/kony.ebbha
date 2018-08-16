@@ -1,7 +1,7 @@
 define(function() {
   return {
     searchIsOut: false,
-    zIndexOut: 200,
+    zIndexOut: 400,
     zIndexIn: 1,
     constructor: function(baseConfig, layoutConfig, pspConfig) {
       this.view.flxSlideDown.opacity = 0;

@@ -1,0 +1,28 @@
+{
+    "AS_Form_ca127481d3c0413e8562ac6ecfe91030": {
+        "id": "AS_Form_ca127481d3c0413e8562ac6ecfe91030",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmProductList",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b13e4c88bd9443e9abe194e4ad609286"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___ec67541d18894ac28c0e21c57b59b338",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onInit",
+            "display": "onInit",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

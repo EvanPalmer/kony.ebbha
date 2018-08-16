@@ -3,6 +3,7 @@ const ebbhaAppConstants = {
     frmProduct : "frmProduct",
 	frmProductList : "frmProductList",
     serviceName : "BestBuyRoot",
+  
     ebbhaStringify : function (v) {
    	  const cache = new Map();
       return JSON.stringify(v, function (key, value) {
@@ -17,7 +18,12 @@ const ebbhaAppConstants = {
         return value;
       });
   	},
+  
     isNullOrEmpty : function(value){
       return value === null || value === undefined || value.length === 0;
+    },
+  
+    isNullOrUndefined : function(value){
+      return value === null || value === undefined;
     }
 };

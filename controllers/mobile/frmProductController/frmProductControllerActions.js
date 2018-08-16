@@ -11,5 +11,10 @@ define({
     AS_Form_ef256b7ca38c4934bb05af37d79c5cca: function AS_Form_ef256b7ca38c4934bb05af37d79c5cca(eventobject) {
         var self = this;
         return self.onPostShow.call(this);
+    },
+    /** init defined for frmProduct **/
+    AS_Form_aba7214f6f044554bf68cd5f6d8194d3: function AS_Form_aba7214f6f044554bf68cd5f6d8194d3(eventobject) {
+        var self = this;
+        return self.onInit.call(this);
     }
 });

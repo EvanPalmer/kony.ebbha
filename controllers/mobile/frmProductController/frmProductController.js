@@ -1,5 +1,8 @@
 define({ 
   productId : 1,
+  onInit : function(){
+    this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
+  },
   onPostShow : function(){
 //     this.productId = "1837061";
 //     this.getProductDetails();
@@ -21,7 +24,7 @@ define({
   bindProducts: function(status, response){
 	if(response.opstatus !== 0){
       alert("ERROR! Retreive Product Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
-    }else{
+    } else {
       this.view.imgThumbnail.src = response.thumbnail;
       this.view.lblName.text = response.name;
       var displayPriceText = response.displayPrice;
@@ -31,7 +34,11 @@ define({
       }
       
       this.view.lblPrice.text = displayPriceText;
-      this.view.lblAverageReview.text = "5?";      
+      if(response.customerReviewCount === 0){
+        this.view.lblAverageReview.text = "Not enough reviews.";
+      }else{
+        this.view.lblAverageReview.text = "Av. response: " + response.customerReviewAverage;
+      }
       this.view.lblDescription.text = response.description;
 
       this.view.lblCustomerReviewCount = "Number of reviews: " + response.customerReviewCount;

@@ -16,5 +16,10 @@ define({
     AS_Segment_de65814ade534d28b92526c0c1b884fe: function AS_Segment_de65814ade534d28b92526c0c1b884fe(eventobject, sectionNumber, rowNumber) {
         var self = this;
         return self.segProductsOnRowClick.call(this, null, null, null);
+    },
+    /** init defined for frmProductList **/
+    AS_Form_ca127481d3c0413e8562ac6ecfe91030: function AS_Form_ca127481d3c0413e8562ac6ecfe91030(eventobject) {
+        var self = this;
+        return self.onInit.call(this);
     }
 });

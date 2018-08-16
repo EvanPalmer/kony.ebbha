@@ -7,13 +7,31 @@ define({
   searchPage:1,
   finalPageReached:false,
 
-  onPostShow : function(){
-    this.categoryId = "abcat0300000";
-    this.categoryName = "Overridden category!";
-    this.searchTerm = "ipad";
-    this.setAnimation();
-    this.finalPageReached = false;
+  onInit : function(){
+    this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+  },
 
+  onPostShow : function(){
+    this.setAnimation();
+  },
+  
+  onNavigate : function(context, isBackNavigation){
+
+    // test data
+    //       this.categoryId = "abcat0300000";
+    //       this.categoryName = "Overridden category!";
+    //       this.searchTerm = "kanye";
+    // end test data
+    if(!ebbhaAppConstants.isNullOrUndefined(context)) {
+      if(!ebbhaAppConstants.isNullOrEmpty(context.categoryId)){
+        this.categoryId = context.categoryId;
+        this.categoryName = context.categoryName;
+      }
+
+      if(!ebbhaAppConstants.isNullOrEmpty(context.searchTerm)){
+        this.searchTerm = context.searchTerm;
+      }
+    }
     if(this.isASearch()){
       this.view.lblCategoryName.text = "Results for: " + this.searchTerm;
       this.getProductsBySearchText(this.searchTerm);
@@ -22,16 +40,11 @@ define({
       this.getProductListByCategoryId(this.categoryId);
     }
   },
-  //     onNavigate : function(context, isBackNavigation){
-  //         this.categoryId = context.categoryId;        
-  //         this.categoryName = context.categoryName;
-  //         this.searchTerm = context.searchTerm;
-  //         this.getProductListByCategoryId(this.categoryId);
-  //         this.setAnimation();
-  //     },
+  
   isASearch : function(){
     return !ebbhaAppConstants.isNullOrEmpty(this.searchTerm);
   },
+  
   getProductsBySearchText:function(){
     var operationName = "getProductsBySearchText";
     var inputParams = { "searchText": this.searchTerm,
@@ -39,12 +52,14 @@ define({
                        "httpheaders": {} };
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
+  
   getProductListByCategoryId:function(categoryId){
     var operationName = "getProductsByCategoryId";
     var inputParams = { "categoryId": categoryId,
                        "httpheaders": {} };
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
+  
   bindProducts: function(status, response){
     if(response.opstatus > 0)
     {
@@ -53,6 +68,7 @@ define({
     } else {
       this.products = response.products;
       this.productId = response.productId;
+      this.finalPageReached = false;
 
       if(ebbhaAppConstants.isNullOrEmpty(this.products)) {
         this.view.flxNoResults.isVisible = true;
@@ -81,6 +97,7 @@ define({
       }
     }
   },
+  
   // this should be done in the post processor, but the java perspective crashes my machine.
   // and there is no documentation to describe the "request" object in the javascript post processor.
   updateProductsListForSaleItems : function() {
@@ -94,6 +111,7 @@ define({
       }
     }
   },
+  
   setAnimation : function() {
     var transformStart = kony.ui.makeAffineTransform();
     var transformEnd = kony.ui.makeAffineTransform();
@@ -117,34 +135,31 @@ define({
     this.view.segProducts.setAnimations({visible:animationDefObject});
     //#endif
   },
+  
   onReachingEnd : function(){
     if(!this.finalPageReached){
       this.searchPage = this.searchPage + 1;
       this.getProductsBySearchText();
     }
   },
-  
+
   segProductsOnRowClick : function(eventObject, sectionNumber, rowNumber){
     kony.print("!!!eventObject: " + ebbhaAppConstants.ebbhaStringify(eventObject));
     var selected = this.view.segProducts.selectedRowItems;
 
     if(selected === null) selected = eventObject.selecteditems;
     if(selected === null || selected === undefined) {
-       alert("Nothing selected!");
-       return;
+      alert("Nothing selected!");
+      return;
     }
 
-    
     if(ebbhaAppConstants.isNullOrEmpty(selected[0].productId)) {
-       alert("No product Id available!");
-       return;
+      alert("Sorry! No product details available - no product ID!");
+    } else {
+      var params = { productId : selected[0].productId };
+      var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
+      nav.navigate(params);
     }
-
-	alert("ProductId: " + selected[0].productId);
-    var params = { productId : selected[0].productId };
-
-    var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
-    nav.navigate(params);
   },
-  
+
 });
