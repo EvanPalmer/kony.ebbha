@@ -40,7 +40,7 @@
     "clipbounds": true,
     "containerweight": 0,
     "data": {
-        "isVisible1": true
+        "showBackButton": false
     },
     "id": "topNavigation",
     "info": null,

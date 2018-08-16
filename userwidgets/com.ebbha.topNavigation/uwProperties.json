@@ -36,7 +36,7 @@
                     "access": "Read",
                     "defaultValue": "",
                     "group": "General",
-                    "kuid": "i00436e517fb43ca96067ae4cd7fee5f",
+                    "kuid": "hf41e0b2e67d45b887865b167155a508",
                     "originalPropertyKey": "myBackFormId",
                     "propertyIndex": 3,
                     "propertyKey": "myBackFormId",
@@ -56,18 +56,37 @@
                     "kuid": "d28a60299a4c4d9587f25808aa518ac9",
                     "originalPropertyKey": "isVisible",
                     "propertyIndex": 2,
-                    "propertyKey": "isVisible1",
+                    "propertyKey": "showBackButton",
                     "pw": {
                         "access": "readwrite",
                         "category": "look",
                         "dependentKeysKUIDs": null,
-                        "displayName": "isVisible1",
+                        "displayName": "Display Back Button",
                         "srcWidget": "imgBack",
                         "type": "boolean",
                         "uiRepresentation": "Label-Radiobuttongroup",
                         "wType": "Image"
                     },
                     "srcWgtKUID": "bb9819524de44ba492cd6e4aded0c909"
+                },
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "e63bc478d7e9460c8122b76dc62a041e",
+                    "originalPropertyKey": "isVisible",
+                    "propertyIndex": 4,
+                    "propertyKey": "showSearchButton",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "look",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Display Search Button",
+                        "srcWidget": "imgSearch",
+                        "type": "boolean",
+                        "uiRepresentation": "Label-Radiobuttongroup",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "c0f8103648484eaebb036de8c247648f"
                 }
             ]
         },

@@ -14,7 +14,6 @@ define(function(){
      this.refreshBreadCrumb();
 
       this.view.topNavigation.myBackFormId = this.viewId;
-      this.view.topNavigation.showBackButton = false;
     },
 	
     onPostShow:function(){
@@ -64,6 +63,11 @@ define(function(){
         breadCrumbText = breadCrumbText + arrow + this.categoryName;
       }
       this.view.lblBreadcrumb.text = breadCrumbText;
+//       if(this.categoryId === null && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
+//         this.view.topNavigation.showBackButton = false;
+//       }else{
+//         this.view.topNavigation.showBackButton = true;
+//       }
     },
 
     setAnimation : function(){
