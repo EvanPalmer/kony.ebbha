@@ -4,8 +4,10 @@ define(function() {
     zIndexOut: 400,
     zIndexIn: 1,
     constructor: function(baseConfig, layoutConfig, pspConfig) {
+      var searchState = require("SearchState");
       this.view.flxSlideDown.opacity = 0;
       this.searchIsOut = false;
+      this.view.txtSearchInput.text = searchState.searchTerm;
     },
 
     //Logic for getters/setters of custom properties
@@ -121,7 +123,9 @@ define(function() {
     },
 
     doCancel : function(){
-      alert("invoking doCancel");
+      var searchState = require("SearchState");
+      searchState.searchTerm = "";
+      
       this.searchIsOut = true;
       this.animateSearch();
       this.view.txtSearchInput.text = null;
@@ -129,10 +133,11 @@ define(function() {
     },
     
     doSearch : function(){
-      alert("Doing search");
-      var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
-	  var searchTerm= this.view.txtSearchInput.text;
+	  var searchState = require("SearchState");
       
+      var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
+	  var searchTerm = this.view.txtSearchInput.text;
+      searchState.searchTerm = searchTerm;
       if(searchTerm !== null && searchTerm.length > 0)
       {
         nav.navigate({searchTerm : searchTerm});
