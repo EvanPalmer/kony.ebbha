@@ -66,6 +66,7 @@
     "hasSections": false,
     "id": "segProducts",
     "ide_onReachingEnd": "AS_Segment_a2b78c9d19cd4fbf93c2623c57963597",
+    "ide_onRowClick": "AS_Segment_de65814ade534d28b92526c0c1b884fe",
     "info": null,
     "ipad": {
         "psp": {

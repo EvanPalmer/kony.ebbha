@@ -11,5 +11,10 @@ define({
     AS_Segment_a2b78c9d19cd4fbf93c2623c57963597: function AS_Segment_a2b78c9d19cd4fbf93c2623c57963597(eventobject) {
         var self = this;
         return self.onReachingEnd.call(this);
+    },
+    /** onRowClick defined for segProducts **/
+    AS_Segment_de65814ade534d28b92526c0c1b884fe: function AS_Segment_de65814ade534d28b92526c0c1b884fe(eventobject, sectionNumber, rowNumber) {
+        var self = this;
+        return self.segProductsOnRowClick.call(this, null, null, null);
     }
 });

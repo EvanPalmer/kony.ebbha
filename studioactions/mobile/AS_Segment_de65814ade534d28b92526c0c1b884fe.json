@@ -1,0 +1,40 @@
+{
+    "AS_Segment_de65814ade534d28b92526c0c1b884fe": {
+        "id": "AS_Segment_de65814ade534d28b92526c0c1b884fe",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmProductList",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b13e4c88bd9443e9abe194e4ad609286"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c7762259a8ba4904ac212fe4ed121dc5",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "segProductsOnRowClick",
+            "display": "segProductsOnRowClick",
+            "inputparams": [{
+                "name": "eventObject"
+            }, {
+                "name": "sectionNumber"
+            }, {
+                "name": "rowNumber"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

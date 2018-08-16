@@ -1,10 +1,13 @@
 define({ 
   productId : 1,
   onPostShow : function(){
-    this.productId = "1837061";
-    this.getProductDetails(this.categoryId);
+//     this.productId = "1837061";
+//     this.getProductDetails();
   },
-  
+  onNavigate : function(context, isBackNavigation){
+    this.productId = context.productId;
+    this.getProductDetails();
+  },
   getProductDetails:function(){
     var operationName = "getProductDetails";
     var inputParams = {

@@ -123,8 +123,28 @@ define({
       this.getProductsBySearchText();
     }
   },
-  segProductsOnRowClick : function(){
+  
+  segProductsOnRowClick : function(eventObject, sectionNumber, rowNumber){
+    kony.print("!!!eventObject: " + ebbhaAppConstants.ebbhaStringify(eventObject));
+    var selected = this.view.segProducts.selectedRowItems;
+
+    if(selected === null) selected = eventObject.selecteditems;
+    if(selected === null || selected === undefined) {
+       alert("Nothing selected!");
+       return;
+    }
+
+    
+    if(ebbhaAppConstants.isNullOrEmpty(selected[0].productId)) {
+       alert("No product Id available!");
+       return;
+    }
+
+	alert("ProductId: " + selected[0].productId);
+    var params = { productId : selected[0].productId };
+
     var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
     nav.navigate(params);
-  }
+  },
+  
 });
