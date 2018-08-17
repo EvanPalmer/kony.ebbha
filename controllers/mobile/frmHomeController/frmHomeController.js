@@ -15,20 +15,20 @@ define(function(){
 	
     onPostShow:function(){
       ebbhaAppConstants.dismissLoadingScreen();
-      this.getTopCategories();
-      this.refreshBreadCrumb();
-    },
-    
-    onNavigate : function(context, isBackNavigation){
-      ebbhaAppConstants.showLoadingScreen();
       var breadcrumbItem = this.popOffBreadcrumbOrNull();
       if(breadcrumbItem === null) this.getTopCategories();
       else this.getSubcategories(breadcrumbItem.id);
+//       this.getTopCategories();
+//       this.refreshBreadCrumb();
+
+    },
+    
+    onNavigate : function(context, isBackNavigation){
     },
 
     pushToBreadcrumb : function(categoryId, categoryName){
       
-      if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId) && ebbhaAppConstants.bestBuy !== this.categoryName) {
+      if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
         var item = {id : this.categoryId, name : this.categoryName};
         breadcrumb.push(item);
       }
@@ -59,11 +59,11 @@ define(function(){
       for(var i = 0; i < breadcrumb.length; i++){
         breadCrumbText = breadCrumbText + arrow + breadcrumb[i].name;
       }
-      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName) && ebbhaAppConstants.bestBuy !== this.categoryName){
+      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName)){
         breadCrumbText = breadCrumbText + arrow + this.categoryName;
       }
       this.view.lblBreadcrumb.text = breadCrumbText;
-      if((this.categoryId === null || ebbhaAppConstants.bestBuy === this.categoryName) && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
+      if(this.categoryId === null && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
         this.view.topNavigation.showGoBackButton = false;
       }else{
         this.view.topNavigation.showGoBackButton = true;
@@ -114,7 +114,6 @@ define(function(){
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
       } else {
         var categories = response.categories;
-        this.pushToBreadcrumb(response.currentCategoryId, response.currentCategoryName);
 		kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
         
         if(categories === null || categories === undefined || categories.length === 0){
@@ -138,9 +137,9 @@ define(function(){
       var selected = this.view.segCategories.selectedRowItems;
       
       if(selected === null) selected = eventObject.selecteditems;
-      var categoryId = selected[0].id;
-      var categoryName = selected[0].name;
-      this.getSubcategories(categoryId);
+      
+      this.pushToBreadcrumb(selected[0].id, selected[0].name);
+      this.getSubcategories(this.categoryId);
     },
    
   };
