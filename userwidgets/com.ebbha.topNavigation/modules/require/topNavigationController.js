@@ -18,7 +18,6 @@ define(function() {
       });
       defineSetter(this, "myBackFormId", function(myBackFormId){
         kony.print("!!@@!@!@defineSetter.myFormId: "+ myBackFormId);
-        this.view.imgBack.isVisible = true;
         this._myBackFormId = myBackFormId;
       });
     },

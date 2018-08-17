@@ -36,7 +36,7 @@
                     "access": "Read",
                     "defaultValue": "",
                     "group": "General",
-                    "kuid": "hf41e0b2e67d45b887865b167155a508",
+                    "kuid": "e6d8262910a04e72b46cacee64f30694",
                     "originalPropertyKey": "myBackFormId",
                     "propertyIndex": 3,
                     "propertyKey": "myBackFormId",
@@ -50,25 +50,6 @@
                 }
             ],
             "passthrough": [
-                {
-                    "access": "Enable",
-                    "group": "General",
-                    "kuid": "d28a60299a4c4d9587f25808aa518ac9",
-                    "originalPropertyKey": "isVisible",
-                    "propertyIndex": 2,
-                    "propertyKey": "showBackButton",
-                    "pw": {
-                        "access": "readwrite",
-                        "category": "look",
-                        "dependentKeysKUIDs": null,
-                        "displayName": "Display Back Button",
-                        "srcWidget": "imgBack",
-                        "type": "boolean",
-                        "uiRepresentation": "Label-Radiobuttongroup",
-                        "wType": "Image"
-                    },
-                    "srcWgtKUID": "bb9819524de44ba492cd6e4aded0c909"
-                },
                 {
                     "access": "Enable",
                     "group": "General",
@@ -87,6 +68,25 @@
                         "wType": "Image"
                     },
                     "srcWgtKUID": "c0f8103648484eaebb036de8c247648f"
+                },
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "fbe6cd9e9d0644dba87b8dba0813657d",
+                    "originalPropertyKey": "isVisible",
+                    "propertyIndex": 5,
+                    "propertyKey": "showGoBackButton",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "look",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Go Back Button",
+                        "srcWidget": "imgGoBack",
+                        "type": "boolean",
+                        "uiRepresentation": "Label-Radiobuttongroup",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "ee7100fdd5f445c6a593f59bd561c27f"
                 }
             ]
         },

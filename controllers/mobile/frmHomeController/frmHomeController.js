@@ -17,7 +17,6 @@ define(function(){
       ebbhaAppConstants.dismissLoadingScreen();
       this.getTopCategories();
       this.refreshBreadCrumb();
-
     },
     
     onNavigate : function(context, isBackNavigation){
@@ -29,7 +28,7 @@ define(function(){
 
     pushToBreadcrumb : function(categoryId, categoryName){
       
-      if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
+      if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId) && ebbhaAppConstants.bestBuy !== this.categoryName) {
         var item = {id : this.categoryId, name : this.categoryName};
         breadcrumb.push(item);
       }
@@ -60,15 +59,15 @@ define(function(){
       for(var i = 0; i < breadcrumb.length; i++){
         breadCrumbText = breadCrumbText + arrow + breadcrumb[i].name;
       }
-      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName)){
+      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName) && ebbhaAppConstants.bestBuy !== this.categoryName){
         breadCrumbText = breadCrumbText + arrow + this.categoryName;
       }
       this.view.lblBreadcrumb.text = breadCrumbText;
-//       if(this.categoryId === null && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
-//         this.view.topNavigation.showBackButton = false;
-//       }else{
-//         this.view.topNavigation.showBackButton = true;
-//       }
+      if((this.categoryId === null || ebbhaAppConstants.bestBuy === this.categoryName) && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
+        this.view.topNavigation.showGoBackButton = false;
+      }else{
+        this.view.topNavigation.showGoBackButton = true;
+      }
     },
 
     setAnimation : function(){
@@ -115,7 +114,7 @@ define(function(){
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
       } else {
         var categories = response.categories;
-        this.pushToBreadcrumb(selected[0].id, selected[0].name);
+        this.pushToBreadcrumb(response.currentCategoryId, response.currentCategoryName);
 		kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
         
         if(categories === null || categories === undefined || categories.length === 0){

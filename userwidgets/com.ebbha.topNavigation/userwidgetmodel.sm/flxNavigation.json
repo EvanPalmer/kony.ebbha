@@ -37,9 +37,9 @@
     "canUpdateUI": true,
     "children": [
         "flxLine",
-        "imgBack",
         "imgLogo",
-        "imgSearch"
+        "imgSearch",
+        "imgGoBack"
     ],
     "clipbounds": true,
     "containerweight": 100,

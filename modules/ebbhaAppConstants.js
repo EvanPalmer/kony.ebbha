@@ -3,7 +3,7 @@ const ebbhaAppConstants = {
     frmProduct : "frmProduct",
 	frmProductList : "frmProductList",
     serviceName : "BestBuyRoot",
-  
+    bestBuy: "Best Buy",
     ebbhaStringify : function (v) {
    	  const cache = new Map();
       return JSON.stringify(v, function (key, value) {

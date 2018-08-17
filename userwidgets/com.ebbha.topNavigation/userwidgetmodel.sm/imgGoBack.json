@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "85%"
+        "value": "70dp"
     },
     "_left_": {
         "type": "string",
@@ -25,30 +25,29 @@
     ],
     "_skin_": "s618f68fd21c45c98ece87ab00a68724",
     "_src_": "bbback.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "20%"
+        "value": "70dp"
     },
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
         "formID": "uwu713554b58b54fbe882cd5e48c44ac1e",
-        "platform": "iphone",
         "templateType": "userwidgets",
         "topLevelBox": null
     },
-    "id": "imgBack",
-    "ide_onTouchEnd": "AS_Image_bb2db8fa07dd41b0b54c1c8efaae6d9a",
-    "imagescalemode": 1,
+    "id": "imgGoBack",
+    "ide_onTouchEnd": "AS_Image_ad1ffff67e844ce29c17ce7a053e706a",
+    "imagescalemode": 0,
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
-    "kuid": "bb9819524de44ba492cd6e4aded0c909",
+    "isvisible": true,
+    "kuid": "ee7100fdd5f445c6a593f59bd561c27f",
     "name": "kony.ui.Image2",
     "parent": "flxNavigation",
     "pf": "userwidgetmodel",

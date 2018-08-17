@@ -12,14 +12,14 @@ define({
         var self = this;
         return self.doSearch.call(this);
     },
-    /** onTouchEnd defined for imgBack **/
-    AS_Image_bb2db8fa07dd41b0b54c1c8efaae6d9a: function AS_Image_bb2db8fa07dd41b0b54c1c8efaae6d9a(eventobject, x, y) {
-        var self = this;
-        return self.goBack.call(this);
-    },
     /** onTouchEnd defined for imgSearch **/
     AS_Image_d5e6e0afb4da41e3a6d245a08d2b4bb8: function AS_Image_d5e6e0afb4da41e3a6d245a08d2b4bb8(eventobject, x, y) {
         var self = this;
         return self.animateSearch.call(this, null, null, null);
+    },
+    /** onTouchEnd defined for imgGoBack **/
+    AS_Image_ad1ffff67e844ce29c17ce7a053e706a: function AS_Image_ad1ffff67e844ce29c17ce7a053e706a(eventobject, x, y) {
+        var self = this;
+        return self.goBack.call(this);
     }
 });

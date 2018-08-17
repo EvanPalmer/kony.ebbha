@@ -11,7 +11,7 @@ define({
   
   onNavigate : function(context, isBackNavigation){
     this.productId = context.productId;
-    this.getProductDetailsAndReviews();
+    this.getProductDetails();
   },
   
   getProductDetails:function(){
@@ -26,6 +26,7 @@ define({
   },
   
   getProductDetailsAndReviews:function(){
+    // Can't get orchestration service to work :(
     ebbhaAppConstants.showLoadingScreen();
     var serviceName = "BestBuyRootOrchestration";
     var operationName = "getProductWithReviews2";
@@ -57,7 +58,7 @@ define({
       this.view.lblDescription.text = response.description;
       this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
 
-      //this.getReviews(response.sku);
+      this.getReviews(response.sku);
     }
   },
    getReviews:function(sku){
