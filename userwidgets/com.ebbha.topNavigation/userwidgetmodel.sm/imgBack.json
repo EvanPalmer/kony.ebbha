@@ -47,7 +47,7 @@
     "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "bb9819524de44ba492cd6e4aded0c909",
     "name": "kony.ui.Image2",
     "parent": "flxNavigation",

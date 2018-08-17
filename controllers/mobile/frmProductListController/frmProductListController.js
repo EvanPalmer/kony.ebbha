@@ -13,6 +13,7 @@ define({
 
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+    ebbhaAppConstants.dismissLoadingScreen();
     this.setAnimation();
   },
 
@@ -22,6 +23,7 @@ define({
     //       this.categoryName = "Overridden category!";
     //       this.searchTerm = "kanye";
     // end test data
+
     this.goingForward = false;
     if(!ebbhaAppConstants.isNullOrUndefined(context)) {
       if(!ebbhaAppConstants.isNullOrEmpty(context.categoryId)){
@@ -184,6 +186,7 @@ define({
       var params = { productId : selected[0].productId };
 	  this.goingForward = true;
       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
+      ebbhaAppConstants.showLoadingScreen();
       nav.navigate(params);
     }
   },

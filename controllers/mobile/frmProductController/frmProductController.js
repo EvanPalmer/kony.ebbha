@@ -5,12 +5,13 @@ define({
   },
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
+      ebbhaAppConstants.dismissLoadingScreen();
 //     this.getProductDetails();
   },
   
   onNavigate : function(context, isBackNavigation){
     this.productId = context.productId;
-    this.getProductDetails();
+    this.getProductDetailsAndReviews();
   },
   
   getProductDetails:function(){
@@ -22,6 +23,15 @@ define({
     				  };
     
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
+  },
+  
+  getProductDetailsAndReviews:function(){
+    ebbhaAppConstants.showLoadingScreen();
+    var serviceName = "BestBuyRootOrchestration";
+    var operationName = "getProductWithReviews2";
+    var inputParams = {"productId": this.productId, 
+        "httpheaders": {}};
+    mfintegrationsecureinvokerasync(inputParams, serviceName, operationName, this.bindProducts);
   },
   
   bindProducts: function(status, response){
@@ -46,7 +56,8 @@ define({
 
       this.view.lblDescription.text = response.description;
       this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
-      this.getReviews(response.sku);
+
+      //this.getReviews(response.sku);
     }
   },
    getReviews:function(sku){

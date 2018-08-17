@@ -9,18 +9,19 @@ define(function(){
     },
     
     preshow : function(){
-     this.setAnimation();
-     this.getTopCategories();
-     this.refreshBreadCrumb();
-
+      this.setAnimation();
       this.view.topNavigation.myBackFormId = this.viewId;
     },
 	
     onPostShow:function(){
-      ebbhaAppConstants.showLoadingScreen();
+      ebbhaAppConstants.dismissLoadingScreen();
+      this.getTopCategories();
+      this.refreshBreadCrumb();
+
     },
     
     onNavigate : function(context, isBackNavigation){
+      ebbhaAppConstants.showLoadingScreen();
       var breadcrumbItem = this.popOffBreadcrumbOrNull();
       if(breadcrumbItem === null) this.getTopCategories();
       else this.getSubcategories(breadcrumbItem.id);
@@ -100,27 +101,37 @@ define(function(){
       mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
     },
 
+    getSubcategories:function(categoryId){
+      ebbhaAppConstants.showLoadingScreen();
+      var operationName = "getCategoriesByCategory";
+      var inputParams = {"categoryId": categoryId,
+                         "httpheaders": {}};
+      mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
+    },    
+    
     bindCategories: function(status, response){
       if(response.opstatus > 0)
       {
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
       } else {
         var categories = response.categories;
+        this.pushToBreadcrumb(selected[0].id, selected[0].name);
 		kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
         
         if(categories === null || categories === undefined || categories.length === 0){
           kony.print("categories was empty! I have to redirect now.");
 		  var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
           var productListContext = { categoryId : this.categoryId, categoryName : this.categoryName };
+	      ebbhaAppConstants.showLoadingScreen();
           nav.navigate(productListContext);
         } else {
           kony.print("Categories was NOT empty! I'll bind some stuff.");
           var segCategories = this.view.segCategories;
           segCategories.widgetDataMap = { "lblCategoryName" : "name"};
           segCategories.setData(categories);
+          ebbhaAppConstants.dismissLoadingScreen();
         }
       }
-      ebbhaAppConstants.dismissLoadingScreen();
     },
 
     segmentSelected:function(eventObject, sectionNumber, rowNumber){
@@ -128,18 +139,10 @@ define(function(){
       var selected = this.view.segCategories.selectedRowItems;
       
       if(selected === null) selected = eventObject.selecteditems;
-      
-      this.pushToBreadcrumb(selected[0].id, selected[0].name);
-      this.getSubcategories(this.categoryId);
+      var categoryId = selected[0].id;
+      var categoryName = selected[0].name;
+      this.getSubcategories(categoryId);
     },
-    
-    getSubcategories:function(categoryId){
-      ebbhaAppConstants.showLoadingScreen();
-      var operationName = "getCategoriesByCategory";
-      var inputParams = {"categoryId": categoryId,
-                         "httpheaders": {}};
-      mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
-    },
-
+   
   };
 });
