@@ -5,11 +5,23 @@
             "custom": [
                 {
                     "group": "General",
-                    "kuid": "hda24a8c9f3b485a9e1790715759bd5b",
+                    "kuid": "fe60be937a4949289b76786c6109edcd",
                     "paramList": [],
                     "propertyKey": "doCancel",
                     "pw": {
                         "displayName": "doCancel",
+                        "uiRepresentation": "Label-Label-Button-Button"
+                    },
+                    "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",
+                    "type": "event"
+                },
+                {
+                    "group": "General",
+                    "kuid": "f9ad7cea533d4dad8fd9ca6948eac06f",
+                    "paramList": [],
+                    "propertyKey": "refresh",
+                    "pw": {
+                        "displayName": "refresh",
                         "uiRepresentation": "Label-Label-Button-Button"
                     },
                     "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",

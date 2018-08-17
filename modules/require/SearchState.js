@@ -1,6 +1,8 @@
 define(function () {
    
     return {
-        searchTerm: null
+        searchTerm: "",
+        searchIsOut: false
     };
+
 });

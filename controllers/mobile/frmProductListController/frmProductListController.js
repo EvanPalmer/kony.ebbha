@@ -13,6 +13,7 @@ define({
 
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+    this.view.topNavigation.refresh();
     ebbhaAppConstants.dismissLoadingScreen();
     this.setAnimation();
   },

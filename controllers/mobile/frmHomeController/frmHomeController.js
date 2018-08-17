@@ -11,6 +11,7 @@ define(function(){
     preshow : function(){
       this.setAnimation();
       this.view.topNavigation.myBackFormId = this.viewId;
+      this.view.topNavigation.refresh();
     },
 	
     onPostShow:function(){

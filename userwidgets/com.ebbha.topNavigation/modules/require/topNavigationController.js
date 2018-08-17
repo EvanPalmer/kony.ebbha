@@ -1,13 +1,12 @@
 define(function() {
   return {
-    searchIsOut: false,
+    searchState: require("SearchState"),
     zIndexOut: 400,
     zIndexIn: 1,
     constructor: function(baseConfig, layoutConfig, pspConfig) {
-      var searchState = require("SearchState");
       this.view.flxSlideDown.opacity = 0;
-      this.searchIsOut = false;
-      this.view.txtSearchInput.text = searchState.searchTerm;
+      this.searchState.searchIsOut = false;
+      this.view.txtSearchInput.text = this.searchState.searchTerm;
     },
 
     //Logic for getters/setters of custom properties
@@ -24,7 +23,7 @@ define(function() {
 
     animateSearch: function(eventobject, x, y) {
       kony.print("!!!: animateSearch");
-      if(this.searchIsOut){
+      if(this.searchState.searchIsOut){
         this.doSlide();
       }else{
         this.view.flxSlideDown.zIndex = this.zIndexOut;
@@ -55,7 +54,7 @@ define(function() {
       var opacity = 1;
       var nextStep = this.doSlide;
 
-      if(this.searchIsOut){
+      if(this.searchState.searchIsOut){
         opacity = 0;
         nextStep = this.animationDone;
       }
@@ -83,7 +82,7 @@ define(function() {
       var nextStep = this.animationDone;
       var zindex = 1;
 
-      if(this.searchIsOut){
+      if(this.searchState.searchIsOut){
         top = "0dp";
         nextStep = this.doFade;
       }
@@ -107,11 +106,11 @@ define(function() {
     },
 
     animationDone : function(){ 
-      if(this.searchIsOut){
+      if(this.searchState.searchIsOut){
         this.view.flxSlideDown.zIndex = this.zIndexIn;
       }
 
-      this.searchIsOut = !this.searchIsOut;
+      this.searchState.searchIsOut = !this.searchState.searchIsOut;
       kony.print("!!!: Animation complete. ");
     },
 
@@ -121,26 +120,27 @@ define(function() {
       nav.navigate();
     },
 
-    doCancel : function(){
-      var searchState = require("SearchState");
-      searchState.searchTerm = "";
-      
-      this.searchIsOut = true;
-      this.animateSearch();
-      this.view.txtSearchInput.text = null;
-      alert("doCancel done!");
+    doCancel : function(){      
+      this.searchState.searchIsOut = false;
+      this.searchState.searchTerm = "";
+      this.refresh();
     },
     
     doSearch : function(){
-	  var searchState = require("SearchState");
       
       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
 	  var searchTerm = this.view.txtSearchInput.text;
-      searchState.searchTerm = searchTerm;
+      this.searchState.searchTerm = searchTerm;
       if(searchTerm !== null && searchTerm.length > 0)
       {
         nav.navigate({searchTerm : searchTerm});
 	  }
+    },
+    
+    refresh:function(){
+      kony.print("Refresh Top Navigation");
+      this.view.txtSearchInput.text = this.searchState.searchTerm;
+      this.animateSearch();
     }
   };
 });
