@@ -3,12 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
-        "value": "10dp"
+        "value": "0dp"
     },
     "_margin_": [
         1,
@@ -22,15 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s286d090c34f4a5382a5d6d374459dc8",
-    "_text_": "Price",
+    "_skin_": "s2bb88efbdb8401db9cd05b9e1f49a65",
+    "_text_": ">",
     "_top_": {
         "type": "string",
-        "value": "10dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "250dp"
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -40,10 +40,17 @@
         }
     },
     "canUpdateUI": true,
-    "containerId": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "lblPrice",
+    "contentalignment": 5,
+    "id": "lblArrow",
     "info": null,
     "ipad": {
         "psp": {
@@ -57,9 +64,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a126ca26e2594573a331a2faa92323f7",
+    "kuid": "c2e8a4e68d9b43b2969f54c3d08bac71",
     "name": "kony.ui.Label",
-    "parent": "flxDetail",
+    "parent": "flxRight",
     "pf": "segTemplProductSale",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -28,7 +28,7 @@
         0
     ],
     "_skin_": "s618f68fd21c45c98ece87ab00a68724",
-    "_src_": "imagedrag.png",
+    "_src_": "working.png",
     "_top_": {
         "type": "string",
         "value": "45dp"
@@ -42,18 +42,21 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "segTemplProductSale",
+        "platform": "iphone",
         "templateType": "segments",
         "topLevelBox": null
     },
     "id": "imgThumbnail",
     "imagescalemode": 1,
+    "imagewhenfailed": "imagemissing.png",
+    "imagewhiledownloading": "working.png",
     "info": null,
+    "invokedProperty": "imageWhenFailed",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "c55fbb074b5646e3873205d5931c63bd",
     "name": "kony.ui.Image2",
-    "parent": "flxProductListSale",
+    "parent": "flxLeft",
     "pf": "segTemplProductSale",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

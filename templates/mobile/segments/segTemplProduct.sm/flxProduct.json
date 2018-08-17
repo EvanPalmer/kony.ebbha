@@ -35,8 +35,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgThumbnail",
-        "flxDetail"
+        "flxLeft",
+        "flxRight"
     ],
     "clipbounds": true,
     "containerId": true,

@@ -45,9 +45,9 @@
         "formTransition": "None"
     },
     "paddinginpixel": false,
-    "platform": "iphone",
-    "prevDevice": "iPhoneX",
-    "prevPlatform": "iphone",
+    "platform": "spaip",
+    "prevDevice": "GalaxyS8",
+    "prevPlatform": "android",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,

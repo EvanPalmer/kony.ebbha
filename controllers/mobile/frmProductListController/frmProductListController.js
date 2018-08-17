@@ -7,6 +7,7 @@ define({
   searchPage:1,
   finalPageReached:false,
   goingForward:false,
+  
   onInit : function(){
   },
 

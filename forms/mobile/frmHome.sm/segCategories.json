@@ -4,9 +4,13 @@
     "__parentReadjusting__": false,
     "_data_": [
         {
+            "lblArrow": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ">"
+            },
             "lblCategoryName": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": ""
+                "text": "Category Name"
             }
         }
     ],
@@ -103,6 +107,9 @@
     "widgetalignment": 5,
     "widgetdatamap": {
         "flxCategoryName": "flxCategoryName",
+        "flxLeft": "flxLeft",
+        "flxRight": "flxRight",
+        "lblArrow": "lblArrow",
         "lblCategoryName": "lblCategoryName"
     },
     "zindex": 50

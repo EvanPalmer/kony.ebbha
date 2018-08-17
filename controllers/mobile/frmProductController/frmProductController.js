@@ -1,16 +1,18 @@
 define({ 
-  productId : 1,
+  productId : 1837061, //test ID is overwritten onNavigate
+
   onInit : function(){
   },
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
-//     this.productId = "1837061";
 //     this.getProductDetails();
   },
+  
   onNavigate : function(context, isBackNavigation){
     this.productId = context.productId;
     this.getProductDetails();
   },
+  
   getProductDetails:function(){
     ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductDetails";

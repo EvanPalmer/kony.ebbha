@@ -6,19 +6,23 @@
         {
             "imgThumbnail": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": ""
+                "src": "working.png"
+            },
+            "lblArrow": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
             },
             "lblPrice": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": ""
+                "text": "Price"
             },
             "lblRating": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": ""
+                "text": "Average user rating"
             },
             "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": ""
+                "text": "Title"
             }
         }
     ],
@@ -116,8 +120,11 @@
     "widgetalignment": 5,
     "widgetdatamap": {
         "flxDetail": "flxDetail",
+        "flxLeft": "flxLeft",
         "flxProduct": "flxProduct",
+        "flxRight": "flxRight",
         "imgThumbnail": "imgThumbnail",
+        "lblArrow": "lblArrow",
         "lblPrice": "lblPrice",
         "lblRating": "lblRating",
         "lblTitle": "lblTitle"

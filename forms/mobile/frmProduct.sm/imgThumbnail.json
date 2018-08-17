@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "s618f68fd21c45c98ece87ab00a68724",
-    "_src_": "imagedrag.png",
+    "_src_": "working.png",
     "_top_": {
         "type": "string",
         "value": "10dp"
@@ -48,7 +48,10 @@
     },
     "id": "imgThumbnail",
     "imagescalemode": 1,
+    "imagewhenfailed": "imagemissing.png",
+    "imagewhiledownloading": "working.png",
     "info": null,
+    "invokedProperty": "imageWhenFailed",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "a361645159ad4b869daabcb7c08c0ed3",

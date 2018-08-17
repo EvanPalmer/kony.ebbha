@@ -59,7 +59,7 @@
     "isvisible": true,
     "kuid": "j763e8a1cee94da58fc0793bbbbd5271",
     "name": "kony.ui.Label",
-    "parent": "flxCategoryName",
+    "parent": "flxLeft",
     "pf": "segTemplCategoryName",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

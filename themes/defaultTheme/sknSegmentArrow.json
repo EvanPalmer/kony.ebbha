@@ -1,0 +1,100 @@
+{
+  "androidwearos": {
+    "font_color": "33333300",
+    "font_name": "default",
+    "font_size": 118,
+    "isForked": true
+  },
+  "background_color": "00000000",
+  "bg_type": "one",
+  "border_color": "424242ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "delinkedPltfrms": {
+    "androidwear": [],
+    "desktop": [],
+    "mobile": [
+      "iphone"
+    ],
+    "tablet": [],
+    "watch": []
+  },
+  "desktopweb": {
+    "font_color": "33333300",
+    "font_name": "Helvetica",
+    "font_size": 118,
+    "isForked": true
+  },
+  "fontSizeInPx": false,
+  "font_color": "333333ff",
+  "font_name": "iphoneSystem",
+  "font_size": 200,
+  "font_style": "normal",
+  "font_weight": "normal",
+  "iphone": {
+    "font_color": "33333300",
+    "isForked": true
+  },
+  "isDefaultSkin": false,
+  "kiosk": {
+    "font_color": "33333300",
+    "font_name": "None",
+    "font_size": 118,
+    "isForked": true
+  },
+  "kuid": "s2bb88efbdb8401db9cd05b9e1f49a65",
+  "spaandroidtablet": {
+    "font_color": "33333300",
+    "font_name": "Helvetica",
+    "font_size": 118,
+    "isForked": true
+  },
+  "spaip": {
+    "bottom_left_border_color": "424242ff",
+    "bottom_left_border_style": "plain",
+    "bottom_left_border_width": 0,
+    "bottom_right_border_color": "424242ff",
+    "bottom_right_border_style": "plain",
+    "bottom_right_border_width": 0,
+    "font_color": "33333300",
+    "isForked": true,
+    "top_left_border_color": "424242ff",
+    "top_left_border_style": "plain",
+    "top_left_border_width": 0,
+    "top_right_border_color": "424242ff",
+    "top_right_border_style": "plain",
+    "top_right_border_width": 0
+  },
+  "spaipad": {
+    "font_color": "33333300",
+    "font_name": "Helvetica",
+    "font_size": 118,
+    "isForked": true
+  },
+  "spawindowstablet": {
+    "font_color": "33333300",
+    "font_name": "Helvetica",
+    "font_size": 118,
+    "isForked": true
+  },
+  "tabrcandroid": {
+    "font_color": "33333300",
+    "font_name": "default",
+    "font_size": 118,
+    "isForked": true
+  },
+  "wType": "Label",
+  "watchos": {
+    "font_color": "33333300",
+    "font_name": "System",
+    "font_size": 118,
+    "isForked": true
+  },
+  "windows8": {
+    "font_color": "33333300",
+    "font_name": "None",
+    "font_size": 118,
+    "isForked": true
+  }
+}

@@ -35,7 +35,7 @@
         "type": "string",
         "value": "100%"
     },
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,

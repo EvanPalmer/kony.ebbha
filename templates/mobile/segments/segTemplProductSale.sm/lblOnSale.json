@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s286d090c34f4a5382a5d6d374459dc8",
+    "_skin_": "s0d940bddfed46039c2c9252486ebc10",
     "_text_": "!!!ON SALE!!!",
     "_top_": {
         "type": "string",
@@ -63,7 +63,7 @@
     "isvisible": true,
     "kuid": "c39049708d614bdcb70e97f6c199e5b8",
     "name": "kony.ui.Label",
-    "parent": "flxProductListSale",
+    "parent": "flxEverything",
     "pf": "segTemplProductSale",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
