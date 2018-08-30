@@ -23,7 +23,6 @@
             "type": "MOVE_ACTION",
             "itemType": "FORM",
             "itemId": "uwu713554b58b54fbe882cd5e48c44ac1e",
-            "widgetId": "flxSlideDown",
             "itemKUID": "u713554b58b54fbe882cd5e48c44ac1e",
             "widgetKUID": "c71468990ffc4832973b77a6e24df222",
             "wType": "FlexContainer",
@@ -46,8 +45,7 @@
             "displayAnimationId": "MOVE_ACTION____a0f34985efc14196b8debc9ed5298b86",
             "forkedPlatform": "all",
             "parentId": null,
-            "callbackType": null,
-            "widgetPath": "this.view.flxSlideDown"
+            "callbackType": null
         }]
     }
 }

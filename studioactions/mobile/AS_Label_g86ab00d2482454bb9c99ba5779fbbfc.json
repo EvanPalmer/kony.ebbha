@@ -1,0 +1,34 @@
+{
+    "AS_Label_g86ab00d2482454bb9c99ba5779fbbfc": {
+        "id": "AS_Label_g86ab00d2482454bb9c99ba5779fbbfc",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "fcb4fc237ac14076bbf95b237ea90117"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___i2ba4e46c94740e9a6085dcb9e5e1ddb",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "doCancelSearchAnimation",
+            "display": "doCancelSearchAnimation",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

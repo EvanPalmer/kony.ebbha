@@ -1,0 +1,24 @@
+{
+    "AS_TextField_a6e3349b97a240d2a56ebb9555aca69c": {
+        "id": "AS_TextField_a6e3349b97a240d2a56ebb9555aca69c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onDone_e743b86e0d6e4485ac4c3d30be29d4a6",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "doSearch",
+            "display": "doSearch",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

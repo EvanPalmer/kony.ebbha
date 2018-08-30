@@ -36,7 +36,7 @@ define({
                        "httpheaders": {}};
     mfintegrationsecureinvokerasync(inputParams, serviceName, operationName, this.bindProducts);
   },
-
+    
   bindProducts: function(status, response){
     if(response.opstatus !== 0){
       alert("ERROR! Retreive Product Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
@@ -87,7 +87,7 @@ define({
         lblReviewerName : "reviewerName",
         lblDescription : "comment"
       };
-      this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.reviews.length + 1;
+      this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.reviews.length;
       this.view.segReviews.setData(response.reviews);
     }
     ebbhaAppConstants.dismissLoadingScreen();

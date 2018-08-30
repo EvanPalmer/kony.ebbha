@@ -43,7 +43,7 @@
     "containerweight": 100,
     "contentalignment": 4,
     "id": "lblCancelSearch",
-    "ide_onTouchEnd": "AS_Label_bfd2b2aabdcf45ccb698f040b0ebe398",
+    "ide_onTouchEnd": "AS_Label_bbfb60fd5c2143c2b08f8fb1b34d8c18",
     "info": null,
     "ipad": {
         "psp": {
@@ -57,10 +57,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "bfccaf764e9a492c8b052fc0627f8946",
+    "kuid": "jefddb6017fc4a44a33c98169336fba9",
     "name": "kony.ui.Label",
-    "parent": "flxSearch",
-    "pf": "userwidgetmodel",
+    "parent": "flxSearchBar",
+    "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

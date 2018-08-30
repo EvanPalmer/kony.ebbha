@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "700dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -36,7 +36,6 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "topNavigation",
         "flxBackground"
     ],
     "clipbounds": true,
@@ -47,7 +46,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "f4fb5df10506443599e5987f3e9da668",
-    "layouttype": 4,
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "frmHome",
     "pf": "frmHome",

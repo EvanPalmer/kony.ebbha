@@ -1,0 +1,33 @@
+{
+    "AS_Image_j307afa818d34fcca7b4a3d79b6e63ec": {
+        "id": "AS_Image_j307afa818d34fcca7b4a3d79b6e63ec",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onTouchEnd_e5be5377bd9a4c45bcd19742f56571e0",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "animateSearch",
+            "display": "animateSearch",
+            "inputparams": [{
+                "name": "eventobject"
+            }, {
+                "name": "x"
+            }, {
+                "name": "y"
+            }],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

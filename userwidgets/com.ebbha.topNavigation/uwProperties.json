@@ -2,32 +2,7 @@
     "classname": "topNavigation",
     "definitions": {
         "apis": {
-            "custom": [
-                {
-                    "group": "General",
-                    "kuid": "fe60be937a4949289b76786c6109edcd",
-                    "paramList": [],
-                    "propertyKey": "doCancel",
-                    "pw": {
-                        "displayName": "doCancel",
-                        "uiRepresentation": "Label-Label-Button-Button"
-                    },
-                    "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",
-                    "type": "event"
-                },
-                {
-                    "group": "General",
-                    "kuid": "f9ad7cea533d4dad8fd9ca6948eac06f",
-                    "paramList": [],
-                    "propertyKey": "refresh",
-                    "pw": {
-                        "displayName": "refresh",
-                        "uiRepresentation": "Label-Label-Button-Button"
-                    },
-                    "srcWgtKUID": "baa866a2105849839de5c8446c4f8b22",
-                    "type": "event"
-                }
-            ],
+            "custom": [],
             "passthrough": []
         },
         "events": {
@@ -48,7 +23,7 @@
                     "access": "Read",
                     "defaultValue": "",
                     "group": "General",
-                    "kuid": "e6d8262910a04e72b46cacee64f30694",
+                    "kuid": "e844fcb476b148fea3e80914fc508fd2",
                     "originalPropertyKey": "myBackFormId",
                     "propertyIndex": 3,
                     "propertyKey": "myBackFormId",
@@ -62,25 +37,6 @@
                 }
             ],
             "passthrough": [
-                {
-                    "access": "Enable",
-                    "group": "General",
-                    "kuid": "e63bc478d7e9460c8122b76dc62a041e",
-                    "originalPropertyKey": "isVisible",
-                    "propertyIndex": 4,
-                    "propertyKey": "showSearchButton",
-                    "pw": {
-                        "access": "readwrite",
-                        "category": "look",
-                        "dependentKeysKUIDs": null,
-                        "displayName": "Display Search Button",
-                        "srcWidget": "imgSearch",
-                        "type": "boolean",
-                        "uiRepresentation": "Label-Radiobuttongroup",
-                        "wType": "Image"
-                    },
-                    "srcWgtKUID": "c0f8103648484eaebb036de8c247648f"
-                },
                 {
                     "access": "Enable",
                     "group": "General",

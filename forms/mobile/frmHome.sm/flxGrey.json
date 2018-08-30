@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "10%"
+        "value": "90%"
     },
     "_left_": {
         "type": "string",
-        "value": "0%"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -35,18 +35,16 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "lblBreadcrumb"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxBreadcrumb",
+    "id": "flxGrey",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c745ae9b22454ed1b59ef1869c71d1e8",
-    "layouttype": 3,
+    "kuid": "a722dd51d2e64c099e274487be400275",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "flxBody",
     "pf": "frmHome",
@@ -56,5 +54,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 2
+    "zindex": 1
 }

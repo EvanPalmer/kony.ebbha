@@ -16,7 +16,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "540dp"
+        "value": "75%"
     },
     "_indicator_": "none",
     "_left_": {
@@ -38,7 +38,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "0%"
+        "value": "20%"
     },
     "_width_": {
         "type": "string",
@@ -48,7 +48,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "52%"
     },
     "containerweight": 100,
     "counter": "00",
@@ -80,7 +80,7 @@
     "paginationconfig": {
         "position": "bottom"
     },
-    "parent": "flxBackground",
+    "parent": "flxBody",
     "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
@@ -112,5 +112,5 @@
         "lblArrow": "lblArrow",
         "lblCategoryName": "lblCategoryName"
     },
-    "zindex": 50
+    "zindex": 2
 }

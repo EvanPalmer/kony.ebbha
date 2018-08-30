@@ -4,8 +4,8 @@
     "__parentReadjusting__": false,
     "_children_": [],
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "10%"
     },
     "_left_": {
         "type": "string",
@@ -35,7 +35,7 @@
         "type": "string",
         "value": "100%"
     },
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,
