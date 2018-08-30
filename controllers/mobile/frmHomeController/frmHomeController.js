@@ -3,6 +3,7 @@ define(function(){
   return { 
     categoryId:null,
     categoryName:null,    
+    categoryData:null,
 
     doSearchAnimation:function(){
       var searchAnimator = require("SearchAnimator");
@@ -17,8 +18,8 @@ define(function(){
 
     init : function()
     {
-//      var searchAnimator = require("SearchAnimator");
-//      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
+      //      var searchAnimator = require("SearchAnimator");
+      //      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
       this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
     },
 
@@ -33,33 +34,38 @@ define(function(){
       ebbhaAppConstants.dismissLoadingScreen();
       var breadcrumbItem = this.popOffBreadcrumbOrNull();
       if(breadcrumbItem === null) this.getTopCategories();
-      else this.getSubcategories(breadcrumbItem.id);
+      else this.doBindCategories(breadcrumbItem.data);
     },
 
     onNavigate : function(context, isBackNavigation){
     },
 
-    pushToBreadcrumb : function(categoryId, categoryName){
+    pushToBreadcrumb : function(){
 
       if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
-        var item = {id : this.categoryId, name : this.categoryName};
+        var item = {id : this.categoryId, name : this.categoryName, data : this.categoryData};
         breadcrumb.push(item);
       }
 
-      this.categoryId = categoryId;
-      this.categoryName = categoryName;
       this.refreshBreadCrumb();
     },
 
     popOffBreadcrumbOrNull : function(){
+      var poppedItem = null;
       var lastItem = null;
       if(breadcrumb.length > 0){
-        lastItem = breadcrumb.pop();
-        this.categoryId = lastItem.id;        
-        this.categoryName = lastItem.name;
+        poppedItem = breadcrumb.pop(); // give it the old pop-n-ignore
+        if(breadcrumb.length > 0)
+        {
+          lastItem = breadcrumb[breadcrumb.length -1];
+          this.categoryId = lastItem.id;        
+          this.categoryName = lastItem.name;
+          this.categoryData = lastItem.data;
+        }
       } else {
         this.categoryId = null;        
         this.categoryName = null;
+        this.categoryData = null;
       }
       this.refreshBreadCrumb();
       return lastItem;
@@ -72,9 +78,7 @@ define(function(){
       for(var i = 0; i < breadcrumb.length; i++){
         breadCrumbText = breadCrumbText + arrow + breadcrumb[i].name;
       }
-      if(!ebbhaAppConstants.isNullOrUndefined(this.categoryName)){
-        breadCrumbText = breadCrumbText + arrow + this.categoryName;
-      }
+
       this.view.lblBreadcrumb.text = breadCrumbText;
       if(this.categoryId === null && ebbhaAppConstants.isNullOrEmpty(breadcrumb)){
         this.view.topNavigation.showGoBackButton = false;
@@ -138,11 +142,18 @@ define(function(){
         } else {
           kony.print("Categories was NOT empty! I'll bind some stuff.");
           var segCategories = this.view.segCategories;
-          segCategories.widgetDataMap = { "lblCategoryName" : "name"};
-          segCategories.setData(categories);
+          this.categoryData = categories;
+          this.pushToBreadcrumb();
+          this.doBindCategories(categories);
           ebbhaAppConstants.dismissLoadingScreen();
         }
       }
+    },
+
+    doBindCategories:function(data){
+      var segCategories = this.view.segCategories;
+      segCategories.widgetDataMap = { "lblCategoryName" : "name"};
+      segCategories.setData(data);
     },
 
     segmentSelected:function(eventObject, sectionNumber, rowNumber){
@@ -151,7 +162,8 @@ define(function(){
 
       if(selected === null) selected = eventObject.selecteditems;
 
-      this.pushToBreadcrumb(selected[0].id, selected[0].name);
+      this.categoryId = selected[0].id;
+      this.categoryName = selected[0].name;
       this.getSubcategories(this.categoryId);
     },
 
