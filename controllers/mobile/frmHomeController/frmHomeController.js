@@ -104,11 +104,18 @@ define(function(){
 
     getTopCategories:function()
     {
-      ebbhaAppConstants.showLoadingScreen();
-      var operationName = "getCategoriesTopLevel";
-      var inputParams = {
-        "httpheaders": {}};
-      mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
+      var topLevelCategoryCache = require("TopLevelCategoryCache");
+      var categories = topLevelCategoryCache.getTopLevelCategoriesOrNull();
+      if(categories === null)
+      {
+        ebbhaAppConstants.showLoadingScreen();
+        var operationName = "getCategoriesTopLevel";
+        var inputParams = {
+          "httpheaders": {}};
+        mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindCategories);
+      }else{
+        this.doBindCategories(categories);
+      }
     },
 
     getSubcategories:function(categoryId){
@@ -145,6 +152,11 @@ define(function(){
     },
 
     doBindCategories:function(data){
+      if(breadcrumb.length === 0) {
+        var topLevelCategoryCache = require("TopLevelCategoryCache");
+        topLevelCategoryCache.setTopLevelCategories(data);
+      }
+      
       var segCategories = this.view.segCategories;
       segCategories.widgetDataMap = { "lblCategoryName" : "name"};
       segCategories.setData(data);
