@@ -1,9 +1,12 @@
 define(function(){
   var breadcrumb = []; 
+
   return { 
-    categoryId:null,
-    categoryName:null,    
-    categoryData:null,
+
+    init : function()
+    {
+      this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+    },
 
     doSearchAnimation:function(){
       var searchAnimator = require("SearchAnimator");
@@ -14,13 +17,6 @@ define(function(){
       this.view.txtSearchInput.text = "";
       var searchAnimator = require("SearchAnimator");
       searchAnimator.doCancelSearchAnimation(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
-    },
-
-    init : function()
-    {
-      //      var searchAnimator = require("SearchAnimator");
-      //      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
-      this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
     },
 
     preshow : function(){
@@ -37,9 +33,6 @@ define(function(){
       else this.doBindCategories(breadcrumbItem.data);
     },
 
-    onNavigate : function(context, isBackNavigation){
-    },
-
     pushToBreadcrumb : function(){
 
       if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
@@ -51,6 +44,11 @@ define(function(){
     },
 
     popOffBreadcrumbOrNull : function(){
+      this.categoryId = null;        
+      this.categoryName = null;
+      this.categoryData = null;
+
+
       var poppedItem = null;
       var lastItem = null;
       if(breadcrumb.length > 0){
@@ -62,10 +60,6 @@ define(function(){
           this.categoryName = lastItem.name;
           this.categoryData = lastItem.data;
         }
-      } else {
-        this.categoryId = null;        
-        this.categoryName = null;
-        this.categoryData = null;
       }
       this.refreshBreadCrumb();
       return lastItem;
@@ -167,14 +161,13 @@ define(function(){
       this.getSubcategories(this.categoryId);
     },
 
-
     doSearch : function(){
       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
       var searchTerm = this.view.txtSearchInput.text;
       if(searchTerm !== null && searchTerm.length > 0)
       {
         nav.navigate({searchTerm : searchTerm});
-      }else{
+      } else {
         alert("Please enter some text to search.");
       }
     }
