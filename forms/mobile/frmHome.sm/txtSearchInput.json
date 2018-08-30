@@ -44,6 +44,7 @@
     "contentalignment": 4,
     "focusskin": "s9c3d1510829443d9a9b00954eda0fa4",
     "id": "txtSearchInput",
+    "ide_onDone": "AS_TextField_d068027d23dd47ebb908ced13ad06432",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

@@ -31,5 +31,10 @@ define({
     AS_Image_e6bff0dba09447c783bbe895b271c046: function AS_Image_e6bff0dba09447c783bbe895b271c046(eventobject, x, y) {
         var self = this;
         return self.doSearchAnimation.call(this);
+    },
+    /** onDone defined for txtSearchInput **/
+    AS_TextField_d068027d23dd47ebb908ced13ad06432: function AS_TextField_d068027d23dd47ebb908ced13ad06432(eventobject, changedtext) {
+        var self = this;
+        return self.doSearch.call(this);
     }
 });

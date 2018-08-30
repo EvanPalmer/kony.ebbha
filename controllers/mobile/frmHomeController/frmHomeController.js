@@ -10,16 +10,16 @@ define(function(){
     },
 
     doCancelSearchAnimation:function(){
+      this.view.txtSearchInput.text = "";
       var searchAnimator = require("SearchAnimator");
       searchAnimator.doCancelSearchAnimation(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
     },
 
     init : function()
     {
-      //#ifdef iphone
-      var searchAnimator = require("SearchAnimator");
-      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
-      //#endif
+//      var searchAnimator = require("SearchAnimator");
+//      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
+      this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
     },
 
     preshow : function(){
@@ -155,20 +155,16 @@ define(function(){
       this.getSubcategories(this.categoryId);
     },
 
-    doCancel : function(){      
-//       this.searchState.searchIsOut = false;
-//       this.searchState.searchTerm = "";
-//       this.refresh();
-    },
 
     doSearch : function(){
-//       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
-//       var searchTerm = this.view.txtSearchInput.text;
-//       this.searchState.searchTerm = searchTerm;
-//       if(searchTerm !== null && searchTerm.length > 0)
-//       {
-//         nav.navigate({searchTerm : searchTerm});
-//       }
+      var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
+      var searchTerm = this.view.txtSearchInput.text;
+      if(searchTerm !== null && searchTerm.length > 0)
+      {
+        nav.navigate({searchTerm : searchTerm});
+      }else{
+        alert("Please enter some text to search.");
+      }
     }
 
   };
