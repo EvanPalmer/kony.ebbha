@@ -9,6 +9,10 @@ define({
   
   onInit : function(){
   },
+  
+  onPreShow : function(){
+    this.view.segProducts.removeAll();
+  },
 
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
@@ -100,16 +104,6 @@ define({
       } else {
         kony.print("Products is NOT empty!");
       }
-      //       *****************************************
-      //		 This messes up the back button.
-      //       If they're comming back it should go back 
-      //       *****************************************
-      // 
-      //       if(this.products === null || this.products === undefined || this.products.length === 1){
-      //         var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
-      //         var productListContext = { productId : this.productId };
-      //         nav.navigate(productListContext);
-      //       }
 
       var segProducts = this.view.segProducts;
       this.updateProductsListForSaleItems();

@@ -4,12 +4,23 @@ define({
   onInit : function(){
   },
   
+  onPreShow:function(){
+    this.resetEverything();
+  },
+  
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
     ebbhaAppConstants.dismissLoadingScreen();
     //     this.getProductDetails();
   },
-
+  resetEverything:function(){
+    this.view.imgThumbnail.src = "";
+	this.view.lblName.text = "";
+    this.view.lblPrice.text = "";
+    this.view.lblAverageReview.text = "";
+    this.view.stars.starRating = 0;
+    this.view.segReviews.removeAll();
+  },
   onNavigate : function(context, isBackNavigation){
     this.productId = context.productId;
     this.getProductDetails();
