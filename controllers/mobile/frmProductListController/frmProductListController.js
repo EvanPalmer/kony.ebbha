@@ -6,14 +6,12 @@ define({
   searchTerm:null,
   searchPage:1,
   finalPageReached:false,
-  goingForward:false,
   
   onInit : function(){
   },
 
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
-    this.view.topNavigation.refresh();
     ebbhaAppConstants.dismissLoadingScreen();
     this.setAnimation();
   },
@@ -25,14 +23,15 @@ define({
     //       this.searchTerm = "kanye";
     // end test data
 
-    this.goingForward = false;
     if(!ebbhaAppConstants.isNullOrUndefined(context)) {
       if(!ebbhaAppConstants.isNullOrEmpty(context.categoryId)){
         this.categoryId = context.categoryId;
         this.categoryName = context.categoryName;
-      }
-      if(!ebbhaAppConstants.isNullOrEmpty(context.searchTerm)){
+        this.searchTerm = null;
+      } else if(!ebbhaAppConstants.isNullOrEmpty(context.searchTerm)){
         this.searchTerm = context.searchTerm;
+        this.categoryId = null;
+        this.categoryName = null;      
       }
     }
 
@@ -45,7 +44,10 @@ define({
       this.getProductListByCategoryId(this.categoryId);
     }
   },
-
+  
+  onHide: function(){
+  },
+  
   isASearch : function(){
     return !ebbhaAppConstants.isNullOrEmpty(this.searchTerm);
   },
@@ -185,16 +187,9 @@ define({
       alert("Sorry! No product details available - no product ID!");
     } else {
       var params = { productId : selected[0].productId };
-	  this.goingForward = true;
       var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProduct);
       ebbhaAppConstants.showLoadingScreen();
       nav.navigate(params);
     }
   },
-  onHide : function(){
-    if(!this.goingForward){ // only reset the search if going backwards.
-      this.searchTerm = null;
-      this.view.topNavigation.doCancel();
-    }
-  }
 });

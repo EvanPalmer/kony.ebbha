@@ -2,10 +2,35 @@ define(function(){
   var breadcrumb = []; 
 
   return { 
+    isGoBack: false,
 
-    init : function()
-    {
+    init : function() {
       this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+    },
+
+    onNavigate : function(context, isBackNavigation){
+	  if(context !== null && context !== undefined && context.isGoBack){
+      	this.isGoBack = context.previousForm !== ebbhaAppConstants.frmHome;
+      }else{
+        this.isGoBack = false;
+      }
+    },
+
+    preshow : function(){
+      var searchAnimator = require("SearchAnimator");
+      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
+      this.view.txtSearchInput.text = "";
+      this.setAnimation();
+      this.view.topNavigation.myBackFormId = this.viewId;
+    },
+    
+    onPostShow:function(){
+      if(!this.isGoBack){
+        ebbhaAppConstants.dismissLoadingScreen();
+        var breadcrumbItem = this.popOffBreadcrumbOrNull();
+        if(breadcrumbItem === null) this.getTopCategories();
+        else this.doBindCategories(breadcrumbItem.data);
+      }
     },
 
     doSearchAnimation:function(){
@@ -19,22 +44,7 @@ define(function(){
       searchAnimator.doCancelSearchAnimation(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
     },
 
-    preshow : function(){
-      var searchAnimator = require("SearchAnimator");
-      searchAnimator.hideSearchStuff(this.view.flxSearchBar, this.view.flxBody, this.view.flxGrey);
-      this.setAnimation();
-      this.view.topNavigation.myBackFormId = this.viewId;
-    },
-
-    onPostShow:function(){
-      ebbhaAppConstants.dismissLoadingScreen();
-      var breadcrumbItem = this.popOffBreadcrumbOrNull();
-      if(breadcrumbItem === null) this.getTopCategories();
-      else this.doBindCategories(breadcrumbItem.data);
-    },
-
     pushToBreadcrumb : function(){
-
       if(!ebbhaAppConstants.isNullOrEmpty(this.categoryId)) {
         var item = {id : this.categoryId, name : this.categoryName, data : this.categoryData};
         breadcrumb.push(item);
@@ -47,7 +57,6 @@ define(function(){
       this.categoryId = null;        
       this.categoryName = null;
       this.categoryData = null;
-
 
       var poppedItem = null;
       var lastItem = null;

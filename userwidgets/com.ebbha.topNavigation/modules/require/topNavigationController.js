@@ -18,7 +18,7 @@ define(function() {
     goBack : function(){
       var nav;
       nav = new kony.mvc.Navigation(this.myBackFormId);
-      nav.navigate();
+      nav.navigate({isGoBack: true, previousForm: kony.application.getCurrentForm().id});
     }
     
   };

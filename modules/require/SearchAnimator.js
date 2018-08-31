@@ -26,13 +26,15 @@ define(function () {
       searchBar.opacity = 0;
       searchBar.zIndex = 1;
       body.zIndex = 2;
+      body.top = 0;
       greyBox.zIndex = 1;
+      greyBox.opacity = 0;
     },
 
     doSearchAnimation:function(searchBar, body, greyBox){
       var self = this;
 
-      // fade
+      // fade (this is not animated in the video)
       searchBar.isVisible = true;
       searchBar.zIndex = 10;
       searchBar.opacity = 1;
@@ -40,44 +42,7 @@ define(function () {
       greyBox.zIndex = 10;
       greyBox.opacity = 0.7;
       greyBox.backgroundColor = "85858500";
-
-      // this doesn't fade in in the animation video, it appears.   
-      //     
-      //     searchBar.animate(
-      //       kony.ui.createAnimation({
-      //         "100": {
-      //           "stepConfig": {
-      //             "timingFunction": kony.anim.EASE
-      //           },
-      //           "opacity": 1
-      //         }
-      //       }), {
-      //         "delay": 0,
-      //         "iterationCount": 1,
-      //         "fillMode": kony.anim.FILL_MODE_FORWARDS,
-      //         "duration": 0.15
-      //       }, {
-      //         "animationEnd": self.doAlert
-      //       });
-
-      //     greyBox.animate(
-      //       kony.ui.createAnimation({
-      //         "100": {
-      //           "stepConfig": {
-      //             "timingFunction": kony.anim.EASE
-      //           },
-      //           "backgroundColor": "85858500",
-      //           "opacity": 0.7
-      //         }
-      //       }), {
-      //         "delay": 0.25,
-      //         "iterationCount": "1",
-      //         "fillMode": kony.anim.FILL_MODE_FORWARDS,
-      //         "duration": self.animationTimeInSecondsFast
-      //       }, {
-      //         "animationEnd": self.doAlert
-      //       });
-
+      
       // slide
       body.animate(
         kony.ui.createAnimation({

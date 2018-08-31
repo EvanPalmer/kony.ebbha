@@ -1,6 +1,6 @@
 define(function () {
     return {
-      	timeToCacheInSeconds: 60,
+      	timeToCacheInSeconds: 600,
         cacheKeyTimeStamp: "cacheKeyTimeStamp",
       	cacheKeyTopCategories: "cacheKeyTopCategories",
       

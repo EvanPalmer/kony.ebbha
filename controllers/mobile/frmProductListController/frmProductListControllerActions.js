@@ -23,7 +23,7 @@ define({
         return self.onPostShow.call(this);
     },
     /** onHide defined for frmProductList **/
-    AS_Form_d6dfaa396b7b4351a09c524bfc513d55: function AS_Form_d6dfaa396b7b4351a09c524bfc513d55(eventobject) {
+    AS_Form_a51d71caed2544f3b4eaffb28be32a14: function AS_Form_a51d71caed2544f3b4eaffb28be32a14(eventobject) {
         var self = this;
         return self.onHide.call(this);
     }
