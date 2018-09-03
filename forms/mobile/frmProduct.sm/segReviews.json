@@ -2,19 +2,40 @@
     "@class": "com.kony.gen.viz.model.container.KVizSegment2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bounces_": false,
     "_data_": [
         {
+            "imgStar1": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar2": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar3": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar4": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar5": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
             },
-            "lblRating": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Star rating here"
-            },
             "lblReviewerName": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
+            },
+            "lblSubmittedBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Submitted by: "
             },
             "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -22,17 +43,37 @@
             }
         },
         {
+            "imgStar1": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar2": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar3": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar4": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar5": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
             },
-            "lblRating": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Star rating here"
-            },
             "lblReviewerName": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
+            },
+            "lblSubmittedBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Submitted by: "
             },
             "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -40,17 +81,37 @@
             }
         },
         {
+            "imgStar1": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar2": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar3": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar4": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
+            "imgStar5": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "staroff.png"
+            },
             "lblDescription": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Desc"
             },
-            "lblRating": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Star rating here"
-            },
             "lblReviewerName": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
+            },
+            "lblSubmittedBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Submitted by: "
             },
             "lblTitle": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -60,13 +121,9 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "380dp"
+        "value": "80%"
     },
     "_indicator_": "none",
-    "_left_": {
-        "type": "string",
-        "value": "5%"
-    },
     "_margin_": [
         0,
         0,
@@ -82,14 +139,18 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "5%"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "90%"
+        "value": "95%"
     },
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "counter": "02",
     "focusedindex": null,
@@ -105,7 +166,9 @@
     },
     "iphone": {
         "psp": {
-            "indicator": "rowselect"
+            "bounces": false,
+            "indicator": "none",
+            "showProgressIndicator": false
         }
     },
     "iscustomlayout": false,
@@ -126,7 +189,7 @@
     "retainselection": false,
     "rowTemplateId": "b75e24ae8de747979d41e5b9a1daf0bb",
     "rowcounter": 2,
-    "rowfocusskin": "s2510628b0eb46bca7b43268671a37b4",
+    "rowfocusskin": "s7a8b0c54c624b019425a290a9265875",
     "rowskin": "s7a8b0c54c624b019425a290a9265875",
     "rowtemplate": "flxTemplReview",
     "screenlevelwidget": false,
@@ -140,15 +203,25 @@
     "selectedsectionindex": 0,
     "selectionbehavior": "default",
     "separatorrequired": false,
+    "showprogressindicator": false,
     "showscrollbars": false,
     "viewtype": "tableview",
     "wType": "Segment",
     "widgetalignment": 5,
     "widgetdatamap": {
+        "flxReview": "flxReview",
+        "flxStarHolder": "flxStarHolder",
+        "flxStars": "flxStars",
+        "flxSubmittedByBox": "flxSubmittedByBox",
         "flxTemplReview": "flxTemplReview",
+        "imgStar1": "imgStar1",
+        "imgStar2": "imgStar2",
+        "imgStar3": "imgStar3",
+        "imgStar4": "imgStar4",
+        "imgStar5": "imgStar5",
         "lblDescription": "lblDescription",
-        "lblRating": "lblRating",
         "lblReviewerName": "lblReviewerName",
+        "lblSubmittedBy": "lblSubmittedBy",
         "lblTitle": "lblTitle"
     },
     "zindex": 1

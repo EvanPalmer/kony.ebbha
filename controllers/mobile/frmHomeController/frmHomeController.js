@@ -136,18 +136,23 @@ define(function(){
     },    
 
     bindCategories: function(status, response){
+      ebbhaAppConstants.dismissLoadingScreen();
       if(response.opstatus > 0)
       {
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
+        this.view.lblNoResults.centerX = "50%";
+        this.view.segCategories.centerX = "200%";
       } else {
+        this.view.lblNoResults.centerX = "200%";
+        this.view.segCategories.centerX = "50%";
         var categories = response.categories;
         kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
 
         if(categories === null || categories === undefined || categories.length === 0){
+          ebbhaAppConstants.showLoadingScreen();
           kony.print("categories was empty! I have to redirect now.");
           var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
           var productListContext = { categoryId : this.categoryId, categoryName : this.categoryName };
-          ebbhaAppConstants.showLoadingScreen();
           nav.navigate(productListContext);
         } else {
           kony.print("Categories was NOT empty! I'll bind some stuff.");
@@ -155,7 +160,6 @@ define(function(){
           this.categoryData = categories;
           this.pushToBreadcrumb();
           this.doBindCategories(categories);
-          ebbhaAppConstants.dismissLoadingScreen();
         }
       }
     },

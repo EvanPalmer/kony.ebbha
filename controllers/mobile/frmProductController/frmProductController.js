@@ -3,11 +3,11 @@ define({
 
   onInit : function(){
   },
-  
+
   onPreShow:function(){
     this.resetEverything();
   },
-  
+
   onPostShow : function(){
     this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmProductList;
     ebbhaAppConstants.dismissLoadingScreen();
@@ -15,7 +15,7 @@ define({
   },
   resetEverything:function(){
     this.view.imgThumbnail.src = "";
-	this.view.lblName.text = "";
+    this.view.lblName.text = "";
     this.view.lblPrice.text = "";
     this.view.lblAverageReview.text = "";
     this.view.stars.starRating = 0;
@@ -47,7 +47,7 @@ define({
                        "httpheaders": {}};
     mfintegrationsecureinvokerasync(inputParams, serviceName, operationName, this.bindProducts);
   },
-    
+
   bindProducts: function(status, response){
     if(response.opstatus !== 0){
       alert("ERROR! Retreive Product Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
@@ -69,13 +69,12 @@ define({
       }
 
       this.view.lblDescription.text = response.description;
-      // This doesnt match what is returned so instead I'll use a count of what's returned when I bind the reviews
-      // this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
+      this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
 
       this.getReviews(response.sku);
     }
   },
-  
+
   getReviews:function(sku){
     ebbhaAppConstants.showLoadingScreen();
     kony.print("Getting the reviews for sku: " + sku);
@@ -87,20 +86,70 @@ define({
 
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindReviews);
   },
-  
+
   bindReviews: function(status, response){
     kony.print("Got the reviews: " + ebbhaAppConstants.ebbhaStringify(response.reviews));
     if(response.opstatus !== 0){
       alert("ERROR! Retreive Review Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
     }else{
+      var reviews = this.setUpStarImages(response.reviews);
       this.view.segReviews.widgetDataMap = {
         lblTitle : "title",
         lblReviewerName : "reviewerName",
-        lblDescription : "comment"
+        lblDescription : "comment",
+        imgStar1 : "imgStar1",
+        imgStar2 : "imgStar2",
+        imgStar3 : "imgStar3",
+        imgStar4 : "imgStar4",
+        imgStar5 : "imgStar5"
       };
-      this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.reviews.length;
       this.view.segReviews.setData(response.reviews);
     }
     ebbhaAppConstants.dismissLoadingScreen();
+  },
+
+  setUpStarImages: function(reviews){
+    var onImage = "staron.png";
+    var offImage = "staroff.png";
+
+    for(var i = 0; i < reviews.length; i++){
+      var rating = reviews[i].rating;
+
+      if(rating > 0)
+      {
+        reviews[i].imgStar1 = onImage;
+      } else {
+        reviews[i].imgStar1 = offImage;
+      }
+
+      if(rating > 1)
+      {
+        reviews[i].imgStar2 = onImage;
+      } else {
+        reviews[i].imgStar2 = offImage;
+      }
+
+      if(rating > 2)
+      {
+        reviews[i].imgStar3 = onImage;
+      } else {
+        reviews[i].imgStar3 = offImage;
+      }
+
+      if(rating > 3)
+      {
+        reviews[i].imgStar4 = onImage;
+      } else {
+        reviews[i].imgStar4 = offImage;
+      }
+
+      if(rating > 4)
+      {
+        reviews[i].imgStar5 = onImage;
+      } else {
+        reviews[i].imgStar5 = offImage;
+      }
+    }
+    return reviews;
   }
 });

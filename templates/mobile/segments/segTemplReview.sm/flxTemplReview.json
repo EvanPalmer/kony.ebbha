@@ -35,10 +35,7 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "lblTitle",
-        "lblReviewerName",
-        "lblRating",
-        "lblDescription"
+        "flxReview"
     ],
     "clipbounds": true,
     "containerId": true,

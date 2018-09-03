@@ -38,6 +38,7 @@
     "children": [
         "flxSearchBar",
         "flxBreadcrumb",
+        "lblNoResults",
         "segCategories",
         "flxGrey"
     ],

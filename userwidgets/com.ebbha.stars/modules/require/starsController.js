@@ -19,7 +19,7 @@ define(function() {
           if(rating > 0)
           {
             this.view.imgStar1.src = onImage;
-          }
+          }	
           if(rating > 1)
           {
             this.view.imgStar2.src = onImage;
@@ -36,7 +36,6 @@ define(function() {
           {
             this.view.imgStar5.src = onImage;
           }
-          
         }
 	};
 });

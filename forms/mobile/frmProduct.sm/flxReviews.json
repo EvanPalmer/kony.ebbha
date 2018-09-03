@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "450dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "2%"
+        "value": "69.84%"
     },
     "_margin_": [
         0,
@@ -26,15 +22,19 @@
     "_skin_": "se9facd8fe124dd795b843155ec95ceb",
     "_top_": {
         "type": "string",
-        "value": "5dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "96%"
+        "value": "90%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
         "lblCustomerReviewCount",
         "segReviews"

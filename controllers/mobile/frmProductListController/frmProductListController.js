@@ -154,10 +154,7 @@ define({
 
     var animationCallbacks = {"animationEnd":function(){kony.print("animation END");}};
     var animationDefObject={definition:animationObject,config:animationConfig,callbacks:animationCallbacks};
-    //#ifndef android
-    // this crashes my galaxy s8
     this.view.segProducts.setAnimations({visible:animationDefObject});
-    //#endif
   },
 
   onReachingEnd : function(){

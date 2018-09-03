@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "5%"
-    },
     "_margin_": [
         1,
         1,
@@ -24,13 +20,9 @@
     ],
     "_skin_": "s91e0b71bb184387ad33de8dc867ee93",
     "_text_": "Label",
-    "_top_": {
-        "type": "string",
-        "value": "5dp"
-    },
     "_width_": {
         "type": "string",
-        "value": "90%"
+        "value": "50.67%"
     },
     "_wrapping_": 2,
     "android": {
@@ -57,9 +49,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a4dc3d2525514e048304804ff4f7966a",
+    "kuid": "i1f8f41159394892abc4c5061f42aca8",
     "name": "kony.ui.Label",
-    "parent": "flxTemplReview",
+    "parent": "flxSubmittedByBox",
     "pf": "segTemplReview",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
