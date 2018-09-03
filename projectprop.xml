@@ -506,7 +506,7 @@
     <attributes name="enablesearchbar" value="false"/>
     <attributes name="tcandroid480basefontsize" value="16"/>
     <attributes name="WRITE_SETTINGS" value="false"/>
-    <attributes name="cloud_account_guid" value="944ad2ba-2fd3-42bc-a25a-88723d35827e"/>
+    <attributes name="cloud_account_guid" value="b101e29e-c16f-4aea-bb36-d6f97f8b4168"/>
     <attributes name="statusBarHidden" value="false"/>
     <attributes name="andmaxsdkkey" value="None"/>
     <attributes name="wp10chat" value="false"/>
@@ -537,7 +537,7 @@
     <attributes name="ANDROIDWEAR_READ_HISTORY_BOOKMARKS" value="false"/>
     <attributes name="location" value="false"/>
     <attributes name="winphn10bgagentclassname" value=""/>
-    <attributes name="cloud_url" value="https://konysecloud.konycloud.com"/>
+    <attributes name="cloud_url" value="http://bluebook.lan:8084/admin"/>
     <attributes name="disablehttpskey" value="false"/>
     <attributes name="Music_Library" value="true"/>
     <attributes name="Location" value="true"/>
@@ -590,14 +590,14 @@
     <attributes name="win8bgagentpath" value=""/>
     <attributes name="ID_CAP_IDENTITY_USER" value="true"/>
     <attributes name="wp10voipCall" value="false"/>
-    <attributes name="cloud_env_GUID" value="ca4df3de-5bca-448a-a811-b482050bbfad"/>
+    <attributes name="cloud_env_GUID" value="ee22d72d-78df-49b1-b79a-faa50d03eb67"/>
     <attributes name="androidInstallLocnPref" value="false"/>
     <attributes name="android_allowselfsignedcertificates" value="None"/>
     <attributes name="ANDROIDWEAR_USE_CREDENTIALS" value="false"/>
     <attributes name="ipad_appicon_1x_76" value=""/>
     <attributes name="keyPassword" value=""/>
     <attributes name="userAccountInformation" value="false"/>
-    <attributes name="cloud_env_name" value="Kony SE Clouds-SE Dev Cloud"/>
+    <attributes name="cloud_env_name" value="KonyAccount-LocalDevEnv"/>
     <attributes name="ANDROIDWEAR_SET_DEBUG_APP" value="false"/>
     <attributes name="tcbb480basefontsize" value="17"/>
     <attributes name="SET_PREFERRED_APPLICATIONS" value="false"/>
@@ -679,7 +679,7 @@
     <attributes name="windowsmapkey" value=""/>
     <attributes name="bb10keystorepassword" value=""/>
     <attributes name="enableResponsive" value="true"/>
-    <attributes name="cloud_account_id" value="100000117"/>
+    <attributes name="cloud_account_id" value="100000002"/>
     <attributes name="Enterprise_Authentication" value="true"/>
     <attributes name="BATTERY_STATS" value="false"/>
     <attributes name="useWatchCommunicationApis" value="false"/>

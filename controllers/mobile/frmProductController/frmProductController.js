@@ -13,6 +13,7 @@ define({
     ebbhaAppConstants.dismissLoadingScreen();
     //     this.getProductDetails();
   },
+  
   resetEverything:function(){
     this.view.imgThumbnail.src = "";
     this.view.lblName.text = "";
@@ -21,6 +22,7 @@ define({
     this.view.stars.starRating = 0;
     this.view.segReviews.removeAll();
   },
+  
   onNavigate : function(context, isBackNavigation){
     this.productId = context.productId;
     this.getProductDetails();

@@ -110,7 +110,7 @@ define({
 
       segProducts.widgetDataMap = { "lblTitle" : "name", 
                                    "lblPrice" : "displayPrice", 
-                                   "lblRating" : "rating", 
+                                   "lblRating" : "displayRating", 
                                    "imgThumbnail" : "imageThumbnail" };
       if(this.searchPage == 1){
         segProducts.setData(this.products);
@@ -128,6 +128,9 @@ define({
       this.products[i].displayPrice = "$" + this.products[i].price;
       this.products[i].imageThumbnail = this.products[i].imageUrls.thumbnail;
       this.products[i].rating = this.products[i].customerReviewAverage;
+	  if(!ebbhaAppConstants.isNullOrEmpty(this.products[i].customerReviewAverage)){
+        this.products[i].displayRating = "Avg user rating: " + this.products[i].customerReviewAverage;
+      }
 
       if(this.products[i].isOnSale){
         this.products[i].template = "flxProductListSale";

@@ -63,7 +63,7 @@
     "isvisible": true,
     "kuid": "c39049708d614bdcb70e97f6c199e5b8",
     "name": "kony.ui.Label",
-    "parent": "flxEverything",
+    "parent": "flxProductListSale",
     "pf": "segTemplProductSale",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

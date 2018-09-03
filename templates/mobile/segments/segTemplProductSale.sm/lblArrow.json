@@ -3,8 +3,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -22,11 +22,15 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "number",
+        "value": "0"
+    },
     "_skin_": "s2bb88efbdb8401db9cd05b9e1f49a65",
     "_text_": ">",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "40dp"
     },
     "_width_": {
         "type": "string",
@@ -40,14 +44,7 @@
         }
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
+    "containerId": true,
     "containerweight": 100,
     "contentalignment": 5,
     "id": "lblArrow",

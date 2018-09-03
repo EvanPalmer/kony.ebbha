@@ -17,6 +17,11 @@ define({
         var self = this;
         return self.onInit.call(this);
     },
+    /** preShow defined for frmProductList **/
+    AS_Form_fe2fce184b5d4c6a9902702a3cd79c51: function AS_Form_fe2fce184b5d4c6a9902702a3cd79c51(eventobject) {
+        var self = this;
+        return self.onPreShow.call(this);
+    },
     /** postShow defined for frmProductList **/
     AS_Form_efcbfc86d4ae4e39982f5460e034f1a8: function AS_Form_efcbfc86d4ae4e39982f5460e034f1a8(eventobject) {
         var self = this;
@@ -26,10 +31,5 @@ define({
     AS_Form_a51d71caed2544f3b4eaffb28be32a14: function AS_Form_a51d71caed2544f3b4eaffb28be32a14(eventobject) {
         var self = this;
         return self.onHide.call(this);
-    },
-    /** preShow defined for frmProductList **/
-    AS_Form_fe2fce184b5d4c6a9902702a3cd79c51: function AS_Form_fe2fce184b5d4c6a9902702a3cd79c51(eventobject) {
-        var self = this;
-        return self.onPreShow.call(this);
     }
 });

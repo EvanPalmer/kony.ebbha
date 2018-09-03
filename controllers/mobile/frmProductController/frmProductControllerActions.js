@@ -12,14 +12,14 @@ define({
         var self = this;
         return self.onInit.call(this);
     },
-    /** postShow defined for frmProduct **/
-    AS_Form_ef256b7ca38c4934bb05af37d79c5cca: function AS_Form_ef256b7ca38c4934bb05af37d79c5cca(eventobject) {
-        var self = this;
-        return self.onPostShow.call(this);
-    },
     /** preShow defined for frmProduct **/
     AS_Form_i8bd91c9270c4edf95938d147a9714d7: function AS_Form_i8bd91c9270c4edf95938d147a9714d7(eventobject) {
         var self = this;
         return self.onPreShow.call(this);
+    },
+    /** postShow defined for frmProduct **/
+    AS_Form_ef256b7ca38c4934bb05af37d79c5cca: function AS_Form_ef256b7ca38c4934bb05af37d79c5cca(eventobject) {
+        var self = this;
+        return self.onPostShow.call(this);
     }
 });
