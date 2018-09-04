@@ -28,6 +28,7 @@ define({
     this.getProductDetails();
   },
 
+  // this method can be used when orchestration is not working
   getProductDetails:function(){
     ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductDetails";
@@ -39,9 +40,8 @@ define({
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
 
+  // This method can be used with Orchestration is working
   getProductDetailsAndReviews:function(){
-    // Can't get orchestration service to work :(
-    // Have to use a second call.
     ebbhaAppConstants.showLoadingScreen();
     var serviceName = "BestBuyRootOrchestration";
     var operationName = "getProductWithReviews2";
@@ -72,6 +72,8 @@ define({
 
       this.view.lblDescription.text = response.description;
       this.view.lblCustomerReviewCount.text = "Number of reviews: " + response.customerReviewCount;
+	  
+      //this.doBindReviews(response.reviews);
 
       this.getReviews(response.sku);
     }
@@ -94,22 +96,27 @@ define({
     if(response.opstatus !== 0){
       alert("ERROR! Retreive Review Detail unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
     }else{
-      var reviews = this.setUpStarImages(response.reviews);
-      this.view.segReviews.widgetDataMap = {
-        lblTitle : "title",
-        lblReviewerName : "reviewerName",
-        lblDescription : "comment",
-        imgStar1 : "imgStar1",
-        imgStar2 : "imgStar2",
-        imgStar3 : "imgStar3",
-        imgStar4 : "imgStar4",
-        imgStar5 : "imgStar5"
-      };
-      this.view.segReviews.setData(response.reviews);
+		this.doBindReviews(response.reviews);
     }
     ebbhaAppConstants.dismissLoadingScreen();
   },
 
+  doBindReviews:function(reviews){
+    var reviewsWithStars = this.setUpStarImages(reviews);
+    this.view.segReviews.widgetDataMap = {
+      lblTitle : "title",
+      lblReviewerName : "reviewerName",
+      lblDescription : "comment",
+      imgStar1 : "imgStar1",
+      imgStar2 : "imgStar2",
+      imgStar3 : "imgStar3",
+      imgStar4 : "imgStar4",
+      imgStar5 : "imgStar5"
+    };
+    this.view.segReviews.setData(reviewsWithStars);
+    ebbhaAppConstants.dismissLoadingScreen();
+  },
+  // Couldn't use my star component because I can't put a component in a segment.
   setUpStarImages: function(reviews){
     var onImage = "staron.png";
     var offImage = "staroff.png";
