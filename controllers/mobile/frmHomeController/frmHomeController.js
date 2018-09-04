@@ -6,6 +6,7 @@ define(function(){
 
     init : function() {
       this.view.topNavigation.myBackFormId = ebbhaAppConstants.frmHome;
+      this.showNoResults(true, true);
     },
 
     onNavigate : function(context, isBackNavigation){
@@ -22,6 +23,7 @@ define(function(){
       this.view.txtSearchInput.text = "";
       this.setAnimation();
       this.view.topNavigation.myBackFormId = this.viewId;
+      this.showNoResults(true, true);
     },
     
     onPostShow:function(){
@@ -31,6 +33,13 @@ define(function(){
         if(breadcrumbItem === null) this.getTopCategories();
         else this.doBindCategories(breadcrumbItem.data);
       }
+    },
+
+    showNoResults:function(results, noResults){
+        this.view.lblNoResults.setVisibility(noResults);
+        this.view.flxNoResults.setVisibility(noResults);
+//        this.view.flxNoResults.height = "100dp";
+        this.view.segCategories.setVisibility(results, null);
     },
 
     doSearchAnimation:function(){
@@ -142,6 +151,7 @@ define(function(){
         alert("ERROR! Retreive Categories unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
         this.view.lblNoResults.centerX = "50%";
         this.view.segCategories.centerX = "200%";
+        this.showNoResults(false, true);
       } else {
         this.view.lblNoResults.centerX = "200%";
         this.view.segCategories.centerX = "50%";
@@ -149,6 +159,7 @@ define(function(){
         kony.print("categories: " + ebbhaAppConstants.ebbhaStringify(categories));
 
         if(categories === null || categories === undefined || categories.length === 0){
+          this.showNoResults(false, true);
           ebbhaAppConstants.showLoadingScreen();
           kony.print("categories was empty! I have to redirect now.");
           var nav = new kony.mvc.Navigation(ebbhaAppConstants.frmProductList);
@@ -157,7 +168,6 @@ define(function(){
         } else {
           kony.print("Categories was NOT empty! I'll bind some stuff.");
           var segCategories = this.view.segCategories;
-          this.categoryData = categories;
           this.pushToBreadcrumb();
           this.doBindCategories(categories);
         }
@@ -173,6 +183,8 @@ define(function(){
       var segCategories = this.view.segCategories;
       segCategories.widgetDataMap = { "lblCategoryName" : "name"};
       segCategories.setData(data);
+      this.categoryData = data;
+      this.showNoResults(true, false);
     },
 
     segmentSelected:function(eventObject, sectionNumber, rowNumber){
