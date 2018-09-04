@@ -11,6 +11,7 @@ define({
   },
   
   onPreShow : function(){
+    this.showNoResults();
   },
 
   onPostShow : function(){
@@ -45,6 +46,7 @@ define({
         this.searchTerm = context.searchTerm;
       }
     }
+
     if(!context.isGoBack){
       this.getProducts();
     }
@@ -126,6 +128,7 @@ define({
     this.showNoResults();
     ebbhaAppConstants.dismissLoadingScreen();
   },
+  
   showNoResults:function(){
     if(ebbhaAppConstants.isNullOrEmptyArray(this.products))
       {
