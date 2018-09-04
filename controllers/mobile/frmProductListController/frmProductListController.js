@@ -11,7 +11,6 @@ define({
   },
   
   onPreShow : function(){
-    this.view.segProducts.removeAll();
   },
 
   onPostShow : function(){
@@ -28,17 +27,30 @@ define({
     // end test data
 
     if(!ebbhaAppConstants.isNullOrUndefined(context)) {
+
+      if(!context.isGoBack){
+        this.categoryName = null;  
+        this.categoryId = null;
+        this.products = null;
+        this.productId = null;
+        this.view.segProducts.removeAll();
+      }
       if(!ebbhaAppConstants.isNullOrEmpty(context.categoryId)){
         this.categoryId = context.categoryId;
         this.categoryName = context.categoryName;
         this.searchTerm = null;
       } else if(!ebbhaAppConstants.isNullOrEmpty(context.searchTerm)){
-        this.searchTerm = context.searchTerm;
         this.categoryId = null;
-        this.categoryName = null;      
+        this.categoryName = null;
+        this.searchTerm = context.searchTerm;
       }
     }
-
+    if(!context.isGoBack){
+      this.getProducts();
+    }
+  },
+  
+  getProducts: function(){
     kony.print("Gonna get the products for CategoryID: " + this.categoryId);
     if(this.isASearch()){
       this.view.lblCategoryName.text = "Results for: " + this.searchTerm;
@@ -69,36 +81,27 @@ define({
     ebbhaAppConstants.showLoadingScreen();
     var operationName = "getProductsByCategoryId";
     var inputParams = { "categoryId": categoryId,
+                       "page" : this.searchPage,
                        "httpheaders": {} };
     mfintegrationsecureinvokerasync(inputParams, ebbhaAppConstants.serviceName, operationName, this.bindProducts);
   },
 
   bindProducts: function(status, response){
-    this.view.lblNoResults.isVisible = false;
-    this.view.lblNoResults.height = 0;
-    this.view.flxNoResults.isVisible = false;
-    this.view.flxNoResults.height = 0;
-    kony.print("The label is NOT visiable and the height is at 0!");
+    this.showNoResults();
 
     if(response.opstatus > 0)
     {
       alert("ERROR! Retreive Products unsuccessful. \nStatus" + status + "\nresponse: " + ebbhaAppConstants.ebbhaStringify(response));
-      this.view.lblNoResults.isVisible = true;
-      this.view.lblNoResults.height = 100;
     } else {
-      this.products = response.products;
+      var currentProducts = response.products;
+
       kony.print("Gonna bind the old products list for these products: " + ebbhaAppConstants.ebbhaStringify(this.products));
 
       this.productId = response.productId;
       this.finalPageReached = false;
 
-      if(ebbhaAppConstants.isNullOrEmpty(this.products)) {
+      if(ebbhaAppConstants.isNullOrEmpty(currentProducts)) {
         kony.print("No products found for category ID " + this.categoryId);
-        this.view.lblNoResults.isVisible = true;
-        this.view.lblNoResults.height = 100;
-        this.view.flxNoResults.isVisible = true;
-        this.view.flxNoResults.height = 100;
-
         kony.print("The label is visiable and the height is at 100!");
         this.finalPageReached = true;
       } else {
@@ -106,35 +109,50 @@ define({
       }
 
       var segProducts = this.view.segProducts;
-      this.updateProductsListForSaleItems();
+      this.updateProductsListForSaleItems(currentProducts);
 
       segProducts.widgetDataMap = { "lblTitle" : "name", 
                                    "lblPrice" : "displayPrice", 
                                    "lblRating" : "displayRating", 
                                    "imgThumbnail" : "imageThumbnail" };
       if(this.searchPage == 1){
-        segProducts.setData(this.products);
+        segProducts.setData(currentProducts);
+        this.products = currentProducts;
       }else{
-        segProducts.addAll(this.products);
+        segProducts.addAll(currentProducts);
+        this.products = this.products.concat(currentProducts);
       }
     }
+    this.showNoResults();
     ebbhaAppConstants.dismissLoadingScreen();
+  },
+  showNoResults:function(){
+    if(ebbhaAppConstants.isNullOrEmptyArray(this.products))
+      {
+        this.view.lblNoResults.setVisibility(true);
+        this.view.flxNoResults.setVisibility(true);
+         this.view.flxNoResults.height = "100dp";
+      }else{
+        this.view.lblNoResults.setVisibility(false);
+        this.view.flxNoResults.setVisibility(false);
+        this.view.flxNoResults.height = "0dp";
+      }
   },
 
   // this should be done in the post processor, but the java perspective crashes my machine.
   // and there is no documentation to describe the "request" object in the javascript post processor.
-  updateProductsListForSaleItems : function() {
-    for(var i = 0; i < this.products.length; i++){
-      this.products[i].displayPrice = "$" + this.products[i].price;
-      this.products[i].imageThumbnail = this.products[i].imageUrls.thumbnail;
-      this.products[i].rating = this.products[i].customerReviewAverage;
-	  if(!ebbhaAppConstants.isNullOrEmpty(this.products[i].customerReviewAverage)){
-        this.products[i].displayRating = "Avg user rating: " + this.products[i].customerReviewAverage;
+  updateProductsListForSaleItems : function(currentProductList) {
+    for(var i = 0; i < currentProductList.length; i++){
+      currentProductList[i].displayPrice = "$" + currentProductList[i].price;
+      currentProductList[i].imageThumbnail = currentProductList[i].imageUrls.thumbnail;
+      currentProductList[i].rating = currentProductList[i].customerReviewAverage;
+	  if(!ebbhaAppConstants.isNullOrEmpty(currentProductList[i].customerReviewAverage)){
+        currentProductList[i].displayRating = "Avg user rating: " + currentProductList[i].customerReviewAverage;
       }
 
-      if(this.products[i].isOnSale){
-        this.products[i].template = "flxProductListSale";
-        this.products[i].displayPrice = "$" + this.products[i].salePrice;
+      if(currentProductList[i].isOnSale){
+        currentProductList[i].template = "flxProductListSale";
+        currentProductList[i].displayPrice = "$" + currentProductList[i].salePrice;
       }
     }
   },
@@ -163,7 +181,7 @@ define({
   onReachingEnd : function(){
     if(!this.finalPageReached){
       this.searchPage = this.searchPage + 1;
-      this.getProductsBySearchText();
+   	  this.getProducts();
     }
   },
 

@@ -3,12 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "151dp"
     },
     "_margin_": [
         1,
@@ -22,15 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s9ab243fdfa847f884974e506fbb8456",
-    "_text_": "Sorry. No Results.",
+    "_skin_": "s42d418e67a447048216f38db091513c",
+    "_text_": "OKAY",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5dp"
     },
     "_width_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
@@ -40,9 +40,10 @@
         }
     },
     "canUpdateUI": true,
+    "containerId": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "id": "lblNoResults",
+    "contentalignment": 4,
+    "id": "Label0hb14530b0d644b",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +57,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ffb8b1c08f51425dbb0a24aef54894e1",
+    "kuid": "ecfb5e78243d4e8399c5853979c806e5",
     "name": "kony.ui.Label",
-    "parent": "flxNoResults",
-    "pf": "frmProductList",
+    "parent": "flxProductListSale",
+    "pf": "segTemplProductSale",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

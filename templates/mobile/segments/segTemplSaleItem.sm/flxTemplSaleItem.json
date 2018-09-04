@@ -1,9 +1,8 @@
 {
     "DNDConfig": null,
-    "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -33,28 +32,35 @@
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "lblNoResults"
+        "Label0gdd04ef2a53144"
     ],
     "clipbounds": true,
+    "containerId": true,
     "containerweight": 100,
+    "controllerInfo": {
+        "default": {
+            "channel": "mobile",
+            "name": "flxTemplSaleItemController"
+        }
+    },
     "enablescrolling": true,
-    "id": "flxNoResults",
+    "id": "flxTemplSaleItem",
     "info": null,
+    "isTemplate": true,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ec00641909da47b9b9f03b30b464eaed",
+    "kuid": "aa9f96131411461aaba6555b9d4f1a5f",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxBackground",
-    "pf": "frmProductList",
+    "parent": "segTemplSaleItem",
+    "pf": "segTemplSaleItem",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "widgetalignment": 1
 }

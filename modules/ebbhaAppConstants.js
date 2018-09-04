@@ -22,7 +22,11 @@ const ebbhaAppConstants = {
     isNullOrEmpty : function(value){
       return value === null || value === undefined || value.length === 0;
     },
-  
+
+    isNullOrEmptyArray : function(array){
+  	  return typeof array === "undefined" || array === null || array.length === null || array.length === 0;
+    },
+
     isNullOrUndefined : function(value){
       return value === null || value === undefined;
     },
